@@ -1,17 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\saucpg\\Desktop\\PlatformGame\\",
+  "WorkspaceRootPath": "C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|C:\\Users\\saucpg\\Desktop\\PlatformGame\\src\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|solutionrelative:src\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\src\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|solutionrelative:src\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|C:\\Users\\saucpg\\Desktop\\PlatformGame\\src\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\src\\Physics.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|solutionrelative:src\\Physics.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\src\\Item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|solutionrelative:src\\Item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\src\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|solutionrelative:src\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\saucpg\\Desktop\\PlatformGame\\Assets\\Maps\\MapTemplate.tmx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\src\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|solutionrelative:src\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\Assets\\Maps\\MapTemplate.tmx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Maps\\MapTemplate.tmx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
@@ -27,36 +39,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Scene.cpp",
-              "DocumentMoniker": "C:\\Users\\saucpg\\Desktop\\PlatformGame\\src\\Scene.cpp",
-              "RelativeDocumentMoniker": "src\\Scene.cpp",
-              "ToolTip": "C:\\Users\\saucpg\\Desktop\\PlatformGame\\src\\Scene.cpp",
-              "RelativeToolTip": "src\\Scene.cpp",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAAAMAAAASAAAA",
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\src\\Player.cpp",
+              "RelativeDocumentMoniker": "src\\Player.cpp",
+              "ToolTip": "C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\src\\Player.cpp",
+              "RelativeToolTip": "src\\Player.cpp",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAgwG8AAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-28T07:50:20.201Z",
+              "WhenOpened": "2024-10-28T08:48:12.785Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Map.cpp",
-              "DocumentMoniker": "C:\\Users\\saucpg\\Desktop\\PlatformGame\\src\\Map.cpp",
-              "RelativeDocumentMoniker": "src\\Map.cpp",
-              "ToolTip": "C:\\Users\\saucpg\\Desktop\\PlatformGame\\src\\Map.cpp",
-              "RelativeToolTip": "src\\Map.cpp",
-              "ViewState": "AQIAAMwAAAAAAAAAAAAAAMEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-28T07:34:02.493Z",
-              "EditorCaption": ""
+              "Title": "Physics.h",
+              "DocumentMoniker": "C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\src\\Physics.h",
+              "RelativeDocumentMoniker": "src\\Physics.h",
+              "ToolTip": "C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\src\\Physics.h",
+              "RelativeToolTip": "src\\Physics.h",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAADMAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-28T08:48:04.533Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Item.cpp",
+              "DocumentMoniker": "C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\src\\Item.cpp",
+              "RelativeDocumentMoniker": "src\\Item.cpp",
+              "ToolTip": "C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\src\\Item.cpp",
+              "RelativeToolTip": "src\\Item.cpp",
+              "ViewState": "AQIAABYAAAAAAAAAAAAAAB8AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-28T08:48:00.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Scene.cpp",
+              "DocumentMoniker": "C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\src\\Scene.cpp",
+              "RelativeDocumentMoniker": "src\\Scene.cpp",
+              "ToolTip": "C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\src\\Scene.cpp",
+              "RelativeToolTip": "src\\Scene.cpp",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAADwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-28T07:50:20.201Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Map.cpp",
+              "DocumentMoniker": "C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\src\\Map.cpp",
+              "RelativeDocumentMoniker": "src\\Map.cpp",
+              "ToolTip": "C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\src\\Map.cpp",
+              "RelativeToolTip": "src\\Map.cpp",
+              "ViewState": "AQIAALEAAAAAAAAAAAAAAMMAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-28T07:34:02.493Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "MapTemplate.tmx",
-              "DocumentMoniker": "C:\\Users\\saucpg\\Desktop\\PlatformGame\\Assets\\Maps\\MapTemplate.tmx",
+              "DocumentMoniker": "C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\Assets\\Maps\\MapTemplate.tmx",
               "RelativeDocumentMoniker": "Assets\\Maps\\MapTemplate.tmx",
-              "ToolTip": "C:\\Users\\saucpg\\Desktop\\PlatformGame\\Assets\\Maps\\MapTemplate.tmx",
+              "ToolTip": "C:\\Users\\saucpg\\Documents\\GitHub\\Platformer-Game-VGD\\Assets\\Maps\\MapTemplate.tmx",
               "RelativeToolTip": "Assets\\Maps\\MapTemplate.tmx",
               "ViewState": "AQIAANsSAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
