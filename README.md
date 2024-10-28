@@ -5,13 +5,13 @@ This is an original platform genre game, where the objective is to go at the end
 ### Features:
 - Map (Level 1 basics)
 - Collisions
-- Player Basic Movement (Idle. Wlak, Jump)
+- Player Basic Movement (Idle. Walk, Jump)
+- Camera that follows the player
+- PLayer animations
 
 ### How to play:
 - Use 'A' to move right.
 - Use 'D' to move left. 
 - Use 'Space' to jump.
-- H Shows / hides a help menu showing the keys
-- F9 Visualize the colliders / logic
-- F10 God Mode
-- F11 Enable/Disable FPS cap to 30
+- F1 Visualize the colliders / logic
+
