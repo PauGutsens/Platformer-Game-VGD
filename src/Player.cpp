@@ -36,6 +36,7 @@ bool Player::Start() {
 	//Load animations
 	idle.LoadAnimations(parameters.child("animations").child("idle"));
 	currentAnimation = &idle;
+	
 
 	// L08 TODO 5: Add physics to the player - initialize physics body
 	pbody = Engine::GetInstance().physics.get()->CreateCircle((int)position.getX(), (int)position.getY(), (texW / 2) - 1, bodyType::DYNAMIC);
@@ -60,6 +61,8 @@ bool Player::Update(float dt)
 	// Move left
 	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) {
 		velocity.x = -0.2 * 16;
+		idle.LoadAnimations(parameters.child("animations").child("idle"));
+		currentAnimation = &idle;
 	}
 
 	// Move right
