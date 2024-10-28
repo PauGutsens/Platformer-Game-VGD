@@ -13,5 +13,5 @@ This is an original platform genre game, where the objective is to go at the end
 - Use 'A' to move right.
 - Use 'D' to move left. 
 - Use 'Space' to jump.
-- F1 Visualize the colliders / logic
+- F9 Visualize the colliders / logic
 
