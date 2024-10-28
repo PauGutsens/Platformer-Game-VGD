@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\saucpg\\Desktop\\Crea una carpeta\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|C:\\Users\\saucpg\\Desktop\\Crea una carpeta\\src\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|solutionrelative:src\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|C:\\Users\\saucpg\\Desktop\\Crea una carpeta\\src\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9C663A5-00A3-466D-94BE-BC98BC72EFFE}|PlatformGame.vcxproj|solutionrelative:src\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\saucpg\\Desktop\\Crea una carpeta\\Assets\\Maps\\MapTemplate.tmx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Maps\\MapTemplate.tmx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Scene.cpp",
+              "DocumentMoniker": "C:\\Users\\saucpg\\Desktop\\Crea una carpeta\\src\\Scene.cpp",
+              "RelativeDocumentMoniker": "src\\Scene.cpp",
+              "ToolTip": "C:\\Users\\saucpg\\Desktop\\Crea una carpeta\\src\\Scene.cpp",
+              "RelativeToolTip": "src\\Scene.cpp",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACQAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-28T07:50:20.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Map.cpp",
+              "DocumentMoniker": "C:\\Users\\saucpg\\Desktop\\Crea una carpeta\\src\\Map.cpp",
+              "RelativeDocumentMoniker": "src\\Map.cpp",
+              "ToolTip": "C:\\Users\\saucpg\\Desktop\\Crea una carpeta\\src\\Map.cpp",
+              "RelativeToolTip": "src\\Map.cpp",
+              "ViewState": "AQIAAMwAAAAAAAAAAAAAAMEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-28T07:34:02.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MapTemplate.tmx",
+              "DocumentMoniker": "C:\\Users\\saucpg\\Desktop\\Crea una carpeta\\Assets\\Maps\\MapTemplate.tmx",
+              "RelativeDocumentMoniker": "Assets\\Maps\\MapTemplate.tmx",
+              "ToolTip": "C:\\Users\\saucpg\\Desktop\\Crea una carpeta\\Assets\\Maps\\MapTemplate.tmx",
+              "RelativeToolTip": "Assets\\Maps\\MapTemplate.tmx",
+              "ViewState": "AQIAANsSAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-28T07:36:34.39Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

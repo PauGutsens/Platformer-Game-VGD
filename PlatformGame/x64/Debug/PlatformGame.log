@@ -1,0 +1,18 @@
+﻿  Scene.cpp
+C:\Users\saucpg\Desktop\Crea una carpeta\src\Scene.cpp(63,55): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucpg\Desktop\Crea una carpeta\src\Scene.cpp(66,55): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucpg\Desktop\Crea una carpeta\src\Scene.cpp(69,55): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucpg\Desktop\Crea una carpeta\src\Scene.cpp(72,55): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+  PlatformGame.vcxproj -> C:\Users\saucpg\Desktop\Crea una carpeta\x64\Debug\PlatformGame.exe
+  C:\Users\saucpg\Desktop\Crea una carpeta\Assets\Audio\Fx\retro-video-game-coin-pickup-38299.ogg
+  C:\Users\saucpg\Desktop\Crea una carpeta\Assets\Audio\Music\music_spy.ogg
+  C:\Users\saucpg\Desktop\Crea una carpeta\Assets\Maps\MapMetadata.png
+  C:\Users\saucpg\Desktop\Crea una carpeta\Assets\Maps\MapTemplate.tmx
+  C:\Users\saucpg\Desktop\Crea una carpeta\Assets\Maps\staticItems.png
+  C:\Users\saucpg\Desktop\Crea una carpeta\Assets\Maps\Tileset_map.png
+  C:\Users\saucpg\Desktop\Crea una carpeta\Assets\Textures\goldCoin.png
+  C:\Users\saucpg\Desktop\Crea una carpeta\Assets\Textures\player1.png
+  C:\Users\saucpg\Desktop\Crea una carpeta\Assets\Textures\test.png
+  C:\Users\saucpg\Desktop\Crea una carpeta\Assets\Textures\player\Idle.png
+  C:\Users\saucpg\Desktop\Crea una carpeta\Assets\Textures\player\Idle_1.png
+  11 archivo(s) copiado(s)
