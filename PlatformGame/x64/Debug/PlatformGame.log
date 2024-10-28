@@ -1,44 +1,11 @@
-﻿  Audio.cpp
-  Engine.cpp
-  EntityManager.cpp
-  Input.cpp
-  Item.cpp
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Item.cpp(42,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Item.cpp(43,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Log.cpp
-  Map.cpp
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(62,123): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(62,106): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(195,150): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(195,112): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(245,16): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(246,16): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  PerfTimer.cpp
-  Physics.cpp
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp(92,23): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp(93,25): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp(129,25): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp(130,26): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp(187,29): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp(431,13): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp(432,13): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp(438,27): warning C4244: 'return': conversión de 'float' a 'int'; posible pérdida de datos
-  PlatformGame.cpp
-  Player.cpp
+﻿  Player.cpp
 C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(31,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(32,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(62,21): warning C4305: '=': truncamiento de 'double' a 'float'
 C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(67,20): warning C4305: '=': truncamiento de 'double' a 'float'
+C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(73,64): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(87,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(88,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Render.cpp
-  Scene.cpp
-C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\src\Scene.cpp(70,74): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Textures.cpp
-  Timer.cpp
-  Vector2D.cpp
-  Window.cpp
-  Generando código...
   PlatformGame.vcxproj -> C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\x64\Debug\PlatformGame.exe
   C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\Assets\Audio\Fx\retro-video-game-coin-pickup-38299.ogg
   C:\Users\saucpg\Documents\GitHub\Platformer-Game-VGD\Assets\Audio\Music\music_spy.ogg
