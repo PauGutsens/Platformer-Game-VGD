@@ -23,17 +23,21 @@
     <entities>
       <player x="96" y="668" w="32" h ="32" texture="Assets/Textures/player/Idle.png">
         <animations>
-          <idle loop="true" speed ="0.5">
-            <frame x="0" y="0" w="32" h="32"/>
-            <frame x="32" y="0" w="32" h="32"/>
-            <frame x="64" y="0" w="32" h="32"/>
-            <frame x="96" y="0" w="32" h="32"/>
-            <frame x="128" y="0" w="32" h="32"/>
-            <frame x="160" y="0" w="32" h="32"/>
-            <frame x="192" y="0" w="32" h="32"/>
-            <frame x="224" y="0" w="32" h="32"/>
-            <frame x="256" y="0" w="32" h="32"/>
-          </idle>
+           <walk loop="true" speed ="0.5">
+   <frame x="0" y="0" w="32" h="32"/>
+   <frame x="32" y="0" w="32" h="32"/>
+   <frame x="64" y="0" w="32" h="32"/>
+   <frame x="96" y="0" w="32" h="32"/>
+   <frame x="128" y="0" w="32" h="32"/>
+   <frame x="160" y="0" w="32" h="32"/>
+   <frame x="192" y="0" w="32" h="32"/>
+   <frame x="224" y="0" w="32" h="32"/>
+   <frame x="256" y="0" w="32" h="32"/>
+<frame x="288" y="0" w="32" h="32"/>
+ </walk>
+   <idle loop="false" speed ="0">
+   <frame x="0" y="0" w="32" h="32"/>
+	</idle>
         </animations>
       </player>
     </entities>
