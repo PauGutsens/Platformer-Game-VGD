@@ -34,8 +34,11 @@ bool Player::Start() {
 	texH = parameters.attribute("h").as_int();
 
 	//Load animations
+	
 	idle.LoadAnimations(parameters.child("animations").child("idle"));
-	currentAnimation = &idle;
+	
+	walk.LoadAnimations(parameters.child("animations").child("walk"));
+	currentAnimation = &walk;
 	
 
 	// L08 TODO 5: Add physics to the player - initialize physics body
@@ -55,45 +58,60 @@ bool Player::Start() {
 
 bool Player::Update(float dt)
 {
-	// L08 TODO 5: Add physics to the player - updated player position using physics
+	// Obtener la velocidad inicial del cuerpo físico
 	b2Vec2 velocity = b2Vec2(0, pbody->body->GetLinearVelocity().y);
 
-	// Move left
+	// Variable para determinar si el jugador está en movimiento horizontal
+	bool isWalking = false;
+
+	// Movimiento hacia la izquierda
 	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) {
-		velocity.x = -0.2 * 16;
-		idle.LoadAnimations(parameters.child("animations").child("idle"));
-		currentAnimation = &idle;
+		velocity.x = -0.2 * 16; // Velocidad hacia la izquierda
+		isWalking = true;      // El jugador está caminando
 	}
 
-	// Move right
+	// Movimiento hacia la derecha
 	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) {
-		velocity.x = 0.2 * 16;
+		velocity.x = 0.2 * 16; // Velocidad hacia la derecha
+		isWalking = true;      // El jugador está caminando
 	}
-	
-	//Jump
-	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN && isJumping == false) {
-		// Apply an initial upward force
+
+	// Saltar
+	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN && !isJumping) {
+		// Impulso inicial hacia arriba
 		pbody->body->ApplyLinearImpulseToCenter(b2Vec2(0, -jumpForce + 0.6), true);
 		isJumping = true;
 	}
 
-	// If the player is jumpling, we don't want to apply gravity, we use the current velocity prduced by the jump
-	if(isJumping == true)
-	{
+	// Mantener la velocidad vertical actual si está saltando
+	if (isJumping) {
 		velocity.y = pbody->body->GetLinearVelocity().y;
 	}
 
-	// Apply the velocity to the player
+	// Aplicar la velocidad calculada al cuerpo físico
 	pbody->body->SetLinearVelocity(velocity);
 
+	// Cambiar la animación según el estado
+	if (isWalking && currentAnimation != &walk) {
+		currentAnimation = &walk; // Activar animación de caminar
+	}
+	else if (!isWalking && currentAnimation != &idle) {
+		currentAnimation = &idle; // Activar animación de estar quieto
+	}
+
+	// Actualizar la posición del jugador basada en el cuerpo físico
 	b2Transform pbodyPos = pbody->body->GetTransform();
 	position.setX(METERS_TO_PIXELS(pbodyPos.p.x) - texH / 2);
 	position.setY(METERS_TO_PIXELS(pbodyPos.p.y) - texH / 2);
 
+	// Dibujar la textura y actualizar la animación
 	Engine::GetInstance().render.get()->DrawTexture(texture, (int)position.getX(), (int)position.getY(), &currentAnimation->GetCurrentFrame());
 	currentAnimation->Update();
+
 	return true;
 }
+
+
 
 bool Player::CleanUp()
 {
