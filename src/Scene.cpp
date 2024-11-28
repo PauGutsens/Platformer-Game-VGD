@@ -11,6 +11,8 @@
 #include "Player.h"
 #include "Map.h"
 #include "Item.h"
+#include "Enemy.h"
+
 
 Scene::Scene() : Module()
 {
