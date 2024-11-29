@@ -2,6 +2,8 @@
 #include "Module.h"
 #include "Entity.h"
 #include "box2d/box2d.h"
+#include <list>
+
 
 #define GRAVITY_X 0.0f
 #define GRAVITY_Y -10.0f
@@ -25,7 +27,8 @@ enum bodyType {
 enum class ColliderType {
 	PLAYER, 
 	ITEM,
-	PLATFORM, 
+	PLATFORM,
+	ENEMY,
 	UNKNOWN
 	// ..
 };
@@ -84,4 +87,6 @@ private:
 
 	// Box2D World
 	b2World* world;
+	std::list<PhysBody*> bodiesToDelete;
+
 };
