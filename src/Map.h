@@ -4,6 +4,11 @@
 #include <list>
 #include <vector>
 
+enum MapOrientation
+{
+    ORTOGRAPHIC = 0,
+    ISOMETRIC
+};
 // L09: TODO 5: Add attributes to the property structure
 struct Properties
 {
@@ -85,6 +90,7 @@ struct MapData
 	int tileWidth;
 	int tileHeight;
     std::list<TileSet*> tilesets;
+    MapOrientation orientation;
 
     // L07: TODO 2: Add the info to the MapLayer Struct
     std::list<MapLayer*> layers;
@@ -122,7 +128,23 @@ public:
 
     // L09: TODO 6: Load a group of properties 
     bool LoadProperties(pugi::xml_node& node, Properties& properties);
+nt GetWidth() {
+        return mapData.width;
+    }
 
+    int GetHeight() {
+        return mapData.height;
+    }
+
+    int GetTileWidth() {
+        return mapData.tileWidth;
+    }
+
+    int GetTileHeight() {
+        return mapData.tileHeight;
+    }
+
+    MapLayer* GetNavigationLayer();
 public: 
     std::string mapFileName;
     std::string mapPath;
