@@ -12,7 +12,7 @@ class Player : public Entity
 public:
 
 	Player();
-	
+
 	virtual ~Player();
 
 	bool Awake();
@@ -31,15 +31,17 @@ public:
 	void SetParameters(pugi::xml_node parameters) {
 		this->parameters = parameters;
 	}
-void SetPosition(Vector2D pos);
 
-Vector2D GetPosition();
+	void SetPosition(Vector2D pos);
+
+	Vector2D GetPosition();
 
 public:
 
 	//Declare player parameters
 	float speed = 5.0f;
 	SDL_Texture* texture = NULL;
+	SDL_RendererFlip flip = SDL_FLIP_NONE;
 	int texW, texH;
 
 	//Audio fx

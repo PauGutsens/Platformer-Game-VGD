@@ -1,4 +1,5 @@
 #pragma once
+
 #include <list>
 #include <queue>
 #include <functional> // for std::greater
