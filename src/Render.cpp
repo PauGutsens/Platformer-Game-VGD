@@ -104,45 +104,25 @@ void Render::ResetViewPort()
 }
 
 // Blit to screen
-bool Render::DrawTexture(SDL_Texture* texture, int x, int y, const SDL_Rect* section, float speed, double angle, int pivotX, int pivotY) const
+void Render::DrawTexture(SDL_Texture* texture, int x, int y, const SDL_Rect* section,
+	float rotation, SDL_Point* pivot, SDL_RendererFlip flip)
 {
-	bool ret = true;
-	int scale = Engine::GetInstance().window.get()->GetScale();
-
 	SDL_Rect rect;
-	rect.x = (int)(camera.x * speed) + x * scale;
-	rect.y = (int)(camera.y * speed) + y * scale;
+	rect.x = x;
+	rect.y = y;
 
-	if(section != NULL)
+	if (section != nullptr)
 	{
 		rect.w = section->w;
 		rect.h = section->h;
 	}
 	else
 	{
-		SDL_QueryTexture(texture, NULL, NULL, &rect.w, &rect.h);
+		SDL_QueryTexture(texture, nullptr, nullptr, &rect.w, &rect.h);
 	}
 
-	rect.w *= scale;
-	rect.h *= scale;
-
-	SDL_Point* p = NULL;
-	SDL_Point pivot;
-
-	if(pivotX != INT_MAX && pivotY != INT_MAX)
-	{
-		pivot.x = pivotX;
-		pivot.y = pivotY;
-		p = &pivot;
-	}
-
-	if(SDL_RenderCopyEx(renderer, texture, section, &rect, angle, p, SDL_FLIP_NONE) != 0)
-	{
-		LOG("Cannot blit to screen. SDL_RenderCopy error: %s", SDL_GetError());
-		ret = false;
-	}
-
-	return ret;
+	// Llamada a SDL_RenderCopyEx con flip
+	SDL_RenderCopyEx(renderer, texture, section, &rect, rotation, pivot, flip);
 }
 
 bool Render::DrawRectangle(const SDL_Rect& rect, Uint8 r, Uint8 g, Uint8 b, Uint8 a, bool filled, bool use_camera) const
