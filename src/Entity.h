@@ -7,8 +7,7 @@ enum class EntityType
 {
 	PLAYER,
 	ITEM,
-	UNKNOWN,
-	ENEMY
+	UNKNOWN
 };
 
 class PhysBody;
