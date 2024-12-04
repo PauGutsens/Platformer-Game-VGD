@@ -17,9 +17,9 @@ class Pathfinding
 
 public:
 
-    Pathfinding();
+	Pathfinding();
 
-    ~Pathfinding();
+	~Pathfinding();
 
     // L11: BFS Pathfinding methods
     void ResetPath(Vector2D pos);
@@ -62,3 +62,4 @@ public:
     int highCostGid = 50; //Gid of the tiles that have high cost - Important adjust this value to your map
 
 };
+
