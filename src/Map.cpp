@@ -134,6 +134,20 @@ bool Map::Load(std::string path, std::string fileName)
         mapData.tileWidth = mapFileXML.child("map").attribute("tilewidth").as_int();
         mapData.tileHeight = mapFileXML.child("map").attribute("tileheight").as_int();
 
+<<<<<<< HEAD
+=======
+	std::string orientationStr = mapFileXML.child("map").attribute("orientation").as_string();
+ 	if (orientationStr == "orthogonal") {
+     	mapData.orientation = MapOrientation::ORTOGRAPHIC;
+ 	}
+ 	else if (orientationStr == "isometric") {
+    	mapData.orientation = MapOrientation::ISOMETRIC;
+ 	}	
+ 	else {
+   	  LOG("Map orientation not found");
+   	  ret = false;
+ 	}
+>>>>>>> parent of 7cff2f8 (Add files via upload)
         // L06: TODO 4: Implement the LoadTileSet function to load the tileset properties
        
         //Iterate the Tileset
@@ -242,8 +256,38 @@ Vector2D Map::MapToWorld(int x, int y) const
 {
     Vector2D ret;
 
+<<<<<<< HEAD
     ret.setX(x * mapData.tileWidth);
     ret.setY(y * mapData.tileHeight);
+=======
+ if (mapData.orientation == MapOrientation::ORTOGRAPHIC) {
+    ret.setX(x * mapData.tileWidth);
+    ret.setY(y * mapData.tileHeight);
+}
+else if (mapData.orientation == MapOrientation::ISOMETRIC) {
+    ret.setX(x * mapData.tileWidth / 2 - y * mapData.tileWidth / 2);
+    ret.setY(x * mapData.tileHeight / 2 + y * mapData.tileHeight / 2);
+}
+
+    return ret;
+}
+
+Vector2D Map::WorldToMap(int x, int y) {
+
+    Vector2D ret(0, 0);
+
+    if (mapData.orientation == MapOrientation::ORTOGRAPHIC) {
+        ret.setX(x / mapData.tileWidth);
+        ret.setY(y / mapData.tileHeight);
+    }
+
+    if (mapData.orientation == MapOrientation::ISOMETRIC) {
+        float half_width = mapData.tileWidth / 2;
+        float half_height = mapData.tileHeight / 2;
+        ret.setX(int((x / half_width + y / half_height) / 2));
+        ret.setY(int((y / half_height - (x / half_width)) / 2));
+    }
+>>>>>>> parent of 7cff2f8 (Add files via upload)
 
     return ret;
 }
