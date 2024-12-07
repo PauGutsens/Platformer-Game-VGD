@@ -57,4 +57,6 @@ private:
 	//L03: TODO 3b: Declare a Player attribute
 	Player* player;
 	std::vector<Enemy*> enemyList;
+	int music;
+	int death_fx;
 };

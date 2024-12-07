@@ -34,7 +34,7 @@ bool Player::Start() {
 
 	// Cargar animaciones
 	idle.LoadAnimations(parameters.child("animations").child("idle"));
-	walk.LoadAnimations(parameters.child("animations").child("walk")); // Asegúrate de que "walk" esté cargado también
+	walk.LoadAnimations(parameters.child("animations").child("walk")); 
 
 	// Establecer animación inicial
 	currentAnimation = &idle;
@@ -49,7 +49,7 @@ bool Player::Start() {
 		pbody->body->SetGravityScale(0);
 
 	// Inicializar efectos de audio
-	pickCoinFxId = Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/retro-video-game-coin-pickup-38299.ogg");
+	pickCoinFxId = Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/coin-recieved-230517.ogg");
 
 	return true;
 }
@@ -109,6 +109,7 @@ bool Player::Update(float dt)
 	// Dibujar la textura con la animación actual
 	Engine::GetInstance().render.get()->DrawTexture(texture, (int)position.getX(), (int)position.getY(), &currentAnimation->GetCurrentFrame());
 	currentAnimation->Update();
+
 
 	return true;
 }

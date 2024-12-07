@@ -64,7 +64,9 @@ bool Scene::Start()
 	Engine::GetInstance().window.get()->GetWindowSize(w, h);
 	Engine::GetInstance().render.get()->camera.x = 0;
 	Engine::GetInstance().render.get()->camera.y = 0;
-
+	Engine::GetInstance().audio.get()->PlayMusic("Assets/Audio/Music/game-music-loop-3-144252.ogg", 0.1f);
+	Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/coin-recieved-230517.ogg");
+	
 	return true;
 }
 
@@ -109,6 +111,7 @@ bool Scene::Update(float dt)
 		enemyList[0]->SetPosition(Vector2D(highlightTile.getX(), highlightTile.getY()));
 		enemyList[0]->ResetPath();
 	}
+	
 
 	return true;
 }

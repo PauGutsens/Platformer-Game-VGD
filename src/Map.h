@@ -119,7 +119,6 @@ public:
 
     // Called before quitting
     bool CleanUp();
-
     // Load new map
     bool Load(std::string path, std::string mapFileName);
 

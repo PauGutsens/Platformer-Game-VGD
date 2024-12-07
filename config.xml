@@ -17,7 +17,7 @@
 	<scene>
 		<map path="Assets/Maps/" name="MapTemplate.tmx" />
 		<entities>
-			<player x="401" y="48" w="32" h="32" texture="Assets/Textures/player/Idle.png">
+			<player x="70" y="670" w="32" h="32" texture="Assets/Textures/player/Idle.png">
 				<animations>
 					<walk loop="true" speed="0.5">
 						<frame x="0" y="0" w="32" h="32" />
@@ -33,19 +33,34 @@
 				</animations>
 			</player>
 			<enemies>
-				<enemy name="badguy" x="448" y="350" w="32" h="32" texture="Assets/Textures/enemy/Idle.png" gravity="true">
+				<enemy name="badguy" x="90" y="660" w="32" h="32" texture="Assets/Textures/enemy/walking_enemy.png" gravity="true">
 					<animations>
-						<idle loop="true" speed="0.25">
+						<walk loop="true" speed="0.25">
 							<frame x="0" y="0" w="32" h="32" />
 							<frame x="32" y="0" w="32" h="32" />
 							<frame x="64" y="0" w="32" h="32" />
 							<frame x="96" y="0" w="32" h="32" />
 							<frame x="128" y="0" w="32" h="32" />
 							<frame x="160" y="0" w="32" h="32" />
-						</idle>
+						</walk>
 					</animations>
 				</enemy>
+				<enemy2 name="badguy" x="90" y="400" w="32" h="32" texture="Assets/Textures/enemy/flying_enemy.png" gravity="true">
+					<animations>
+						<fly loop="true" speed="0.25">
+							<frame x="0" y="0" w="32" h="32" />
+							<frame x="32" y="0" w="32" h="32" />
+							<frame x="64" y="0" w="32" h="32" />
+							<frame x="96" y="0" w="32" h="32" />
+							<frame x="128" y="0" w="32" h="32" />
+							<frame x="160" y="0" w="32" h="32" />
+						</fly>
+					</animations>
+				</enemy2>
 			</enemies>
 		</entities>
+		<sounds>
+			
+		</sounds>
 	</scene>
 </config>

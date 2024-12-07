@@ -6,7 +6,11 @@
 #include "Animation.h"
 
 struct SDL_Texture;
-
+enum PlayerState
+{
+	ALIVE,
+	DEAD
+};
 class Player : public Entity
 {
 public:

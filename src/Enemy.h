@@ -33,7 +33,8 @@ public:
 	void ResetPath();
 
 public:
-
+	float speed;
+	bool direction;
 private:
 
 	SDL_Texture* texture;
@@ -41,7 +42,7 @@ private:
 	int texW, texH;
 	pugi::xml_node parameters;
 	Animation* currentAnimation = nullptr;
-	Animation idle;
+	Animation walk, fly;
 	PhysBody* pbody;
 	Pathfinding* pathfinding;
 };
