@@ -197,4 +197,5 @@ void Scene::SaveState() {
 
 	//Saves the modifications to the XML 
 	loadFile.save_file("config.xml");
+	Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/checkpoint.ogg");
 }
