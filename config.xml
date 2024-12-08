@@ -17,7 +17,7 @@
 	<scene>
 		<map path="Assets/Maps/" name="MapTemplate.tmx" />
 		<entities>
-			<player x="401" y="48" w="32" h="32" texture="Assets/Textures/player/Idle.png">
+			<player x="359" y="451" w="32" h="32" texture="Assets/Textures/player/Idle.png">
 				<animations>
 					<walk loop="true" speed="0.5" texture="Assets/Textures/player/Idle.png">
 						<frame x="0" y="0" w="32" h="32" />
@@ -30,13 +30,13 @@
 					<idle loop="false" speed="0" texture="Assets/Textures/player/Idle.png">
 						<frame x="0" y="0" w="32" h="32" />
 					</idle>
-					<walkLeft loop ="true" speed="0.5" texture="Assets/Textures/player/Idle_2.png">
+					<walkLeft loop="true" speed="0.5" texture="Assets/Textures/player/Idle_2.png">
 						<frame x="0" y="0" w="32" h="32" />
 						<frame x="32" y="0" w="32" h="32" />
 						<frame x="64" y="0" w="32" h="32" />
 						<frame x="96" y="0" w="32" h="32" />
 						<frame x="128" y="0" w="32" h="32" />
-						<frame x="160" y="0" w="32" h="32" /> 
+						<frame x="160" y="0" w="32" h="32" />
 					</walkLeft>
 				</animations>
 			</player>

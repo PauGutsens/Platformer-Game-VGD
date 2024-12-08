@@ -71,14 +71,6 @@ bool Player::Update(float dt)
 	IsWalking = false; // Inicializamos el estado como false por defecto
 	
 
-	// Move left
-	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) {
-		if (!IsDashing) {
-			velocity.x = -0.2 * 16;
-			IsWalking = true;
-			IsLookingRight = false;
-		}
-	}
 
 	// Move right
 	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) {
@@ -89,21 +81,26 @@ bool Player::Update(float dt)
 		}
 	}
 
-	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_LSHIFT) == KEY_REPEAT) {
-		IsDashing = true;
-		if (IsLookingRight)
-		{
-			velocity.x = 0.2 * 16;
-			IsWalking = true;
-			LOG("HOLA");
-		}
-		else
-		{
+	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) {
+		if (!IsDashing) {
 			velocity.x = -0.2 * 16;
 			IsWalking = true;
+			IsLookingRight = false;
 		}
-
 	}
+
+	/*LOG("IsLookingRight: %s", IsLookingRight ? "true" : "false");*/
+
+	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_LSHIFT) == KEY_REPEAT) {
+		IsDashing = true;
+		if (IsLookingRight) {
+			velocity.x = 0.4f * 16; // Dash speed to the right
+		}
+		else {
+			velocity.x = -0.4f * 16; // Dash speed to the left
+		}
+	}
+
 	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_LSHIFT) == KEY_UP)
 	{
 		IsDashing = false;
@@ -123,16 +120,22 @@ bool Player::Update(float dt)
 	}
 
 	//Jump
-	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN && isJumping == false) {
-		// Apply an initial upward force
+	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN && !isJumping) {
 		pbody->body->ApplyLinearImpulseToCenter(b2Vec2(0, -jumpForce), true);
 		isJumping = true;
 	}
 
 	// If the player is jumping, we don't want to apply gravity, we use the current velocity produced by the jump
-	if (isJumping == true)
-	{
-		velocity.y = pbody->body->GetLinearVelocity().y;
+	if (isJumping) {
+		float verticalVelocity = pbody->body->GetLinearVelocity().y;
+
+		// Allow landing when vertical velocity is near zero
+		if (verticalVelocity > -0.1f && verticalVelocity < 0.1f) {
+			isJumping = false;
+		}
+		else {
+			velocity.y = verticalVelocity;
+		}
 	}
 
 	// Apply the velocity to the player
@@ -157,6 +160,7 @@ bool Player::CleanUp()
 	return true;
 }
 
+
 // L08 TODO 6: Define OnCollision function for the player. 
 void Player::OnCollision(PhysBody* physA, PhysBody* physB) {
 	switch (physB->ctype)
@@ -176,8 +180,16 @@ void Player::OnCollision(PhysBody* physA, PhysBody* physB) {
 	case ColliderType::ENEMY:
 		if (IsDashing)
 		{
-			LOG("Enemy Killed");
+			Engine::GetInstance().physics.get()->DeletePhysBody(physB);
 		}
+		else {
+			/*Engine::GetInstance().scene.get()->LoadState();*/
+			LOG("YOU DIED");
+		}
+		break;
+	case ColliderType::DEATH:
+		
+		break;
 	default:
 		break;
 	}

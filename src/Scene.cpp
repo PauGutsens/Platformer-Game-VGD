@@ -18,6 +18,8 @@ Scene::Scene() : Module()
 	name = "scene";
 }
 
+
+
 // Destructor
 Scene::~Scene()
 {}
@@ -31,7 +33,6 @@ bool Scene::Awake()
 	//L04: TODO 3b: Instantiate the player using the entity manager
 	player = (Player*)Engine::GetInstance().entityManager->CreateEntity(EntityType::PLAYER);
 	player->SetParameters(configParameters.child("entities").child("player"));
-
 	//L08 Create a new item using the entity manager and set the position to (200, 672) to test
 	for (pugi::xml_node itemNode = configParameters.child("entities").child("items").child("item"); itemNode; itemNode = itemNode.next_sibling("item"))
 	{
@@ -109,6 +110,7 @@ bool Scene::Update(float dt)
 		enemyList[0]->SetPosition(Vector2D(highlightTile.getX(), highlightTile.getY()));
 		enemyList[0]->ResetPath();
 	}
+	
 
 	return true;
 }
@@ -125,6 +127,7 @@ bool Scene::PostUpdate()
 
 	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_F5) == KEY_DOWN)
 		SaveState();
+	
 
 	return ret;
 }

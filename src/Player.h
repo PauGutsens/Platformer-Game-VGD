@@ -36,6 +36,7 @@ public:
 
 	Vector2D GetPosition();
 
+
 public:
 
 	//Declare player parameters
@@ -56,4 +57,6 @@ public:
 	pugi::xml_node parameters;
 	Animation* currentAnimation = nullptr;
 	Animation idle, walk, walkLeft;
+
+
 };
