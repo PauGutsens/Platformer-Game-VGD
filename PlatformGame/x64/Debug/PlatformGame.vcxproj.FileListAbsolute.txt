@@ -9,3 +9,14 @@ C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\x64\Debug\vorb
 C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\x64\Debug\ogg.dll
 C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\x64\Debug\wavpackdll.dll
 C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Platform.4970EBBF.Up2Date
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\x64\Debug\pugixml.dll
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\x64\Debug\SDL2d.dll
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\x64\Debug\SDL2_imaged.dll
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\x64\Debug\libpng16d.dll
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\x64\Debug\zlibd1.dll
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\x64\Debug\SDL2_mixerd.dll
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\x64\Debug\vorbisfile.dll
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\x64\Debug\vorbis.dll
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\x64\Debug\ogg.dll
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\x64\Debug\wavpackdll.dll
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Platform.4970EBBF.Up2Date

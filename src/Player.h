@@ -45,6 +45,8 @@ public:
 	bool IsWalking;
 	//Audio fx
 	int pickCoinFxId;
+	bool IsDashing;
+	bool IsLookingRight;
 
 	// L08 TODO 5: Add physics to the player - declare a Physics body
 	PhysBody* pbody;
@@ -53,5 +55,5 @@ public:
 
 	pugi::xml_node parameters;
 	Animation* currentAnimation = nullptr;
-	Animation idle, walk;
+	Animation idle, walk, walkLeft;
 };

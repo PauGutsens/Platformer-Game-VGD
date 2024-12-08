@@ -12,6 +12,7 @@
 Player::Player() : Entity(EntityType::PLAYER)
 {
 	name = "Player";
+	
 }
 
 Player::~Player() {
@@ -34,7 +35,8 @@ bool Player::Start() {
 
 	// Cargar animaciones
 	idle.LoadAnimations(parameters.child("animations").child("idle"));
-	walk.LoadAnimations(parameters.child("animations").child("walk")); // Asegúrate de que "walk" esté cargado también
+	walk.LoadAnimations(parameters.child("animations").child("walk"));
+	walkLeft.LoadAnimations(parameters.child("animation").child("walkLeft")); // Asegúrate de que "walk" esté cargado también
 
 	// Establecer animación inicial
 	currentAnimation = &idle;
@@ -50,7 +52,9 @@ bool Player::Start() {
 
 	// Inicializar efectos de audio
 	pickCoinFxId = Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/retro-video-game-coin-pickup-38299.ogg");
-
+	
+	IsLookingRight = true;
+	IsDashing = false;
 	return true;
 }
 
@@ -61,26 +65,58 @@ bool Player::Update(float dt)
 	b2Vec2 velocity = b2Vec2(0, pbody->body->GetLinearVelocity().y);
 
 	if (!parameters.attribute("gravity").as_bool()) {
-		velocity = b2Vec2(0, 0);
+		velocity = b2Vec2(0, 9.8);
 	}
 
 	IsWalking = false; // Inicializamos el estado como false por defecto
+	
 
 	// Move left
 	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) {
-		velocity.x = -0.2 * 16;
-		IsWalking = true;
+		if (!IsDashing) {
+			velocity.x = -0.2 * 16;
+			IsWalking = true;
+			IsLookingRight = false;
+		}
 	}
 
 	// Move right
 	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) {
-		velocity.x = 0.2 * 16;
-		IsWalking = true;
+		if (!IsDashing) {
+			velocity.x = 0.2 * 16;
+			IsWalking = true;
+			IsLookingRight = true;
+		}
+	}
+
+	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_LSHIFT) == KEY_REPEAT) {
+		IsDashing = true;
+		if (IsLookingRight)
+		{
+			velocity.x = 0.2 * 16;
+			IsWalking = true;
+			LOG("HOLA");
+		}
+		else
+		{
+			velocity.x = -0.2 * 16;
+			IsWalking = true;
+		}
+
+	}
+	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_LSHIFT) == KEY_UP)
+	{
+		IsDashing = false;
 	}
 
 	// Cambiar la animación según el estado
 	if (IsWalking) {
-		currentAnimation = &walk;
+		if (IsLookingRight = true) {
+			currentAnimation = &walk;
+		}
+		if (IsLookingRight = false) {
+			currentAnimation = &walkLeft;
+		}
 	}
 	else {
 		currentAnimation = &idle;
@@ -137,6 +173,11 @@ void Player::OnCollision(PhysBody* physA, PhysBody* physB) {
 	case ColliderType::UNKNOWN:
 		LOG("Collision UNKNOWN");
 		break;
+	case ColliderType::ENEMY:
+		if (IsDashing)
+		{
+			LOG("Enemy Killed");
+		}
 	default:
 		break;
 	}

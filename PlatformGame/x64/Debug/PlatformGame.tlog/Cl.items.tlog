@@ -1,19 +1,19 @@
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Audio.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Audio.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Enemy.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Enemy.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Engine.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Engine.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\EntityManager.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\EntityManager.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Input.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Input.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Item.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Item.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Log.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Log.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Map.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Map.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Pathfinding.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Pathfinding.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\PerfTimer.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\PerfTimer.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Physics.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Physics.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\PlatformGame.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\PlatformGame.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Player.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Player.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Render.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Render.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Scene.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Scene.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Textures.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Textures.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Timer.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Timer.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Vector2D.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Vector2D.obj
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Window.cpp;C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\PlatformGame\x64\Debug\Window.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Audio.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Audio.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Enemy.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Enemy.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Engine.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Engine.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\EntityManager.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\EntityManager.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Input.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Input.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Item.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Item.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Log.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Log.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Map.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Pathfinding.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\PerfTimer.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\PerfTimer.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Physics.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\PlatformGame.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\PlatformGame.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Player.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Render.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Render.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Scene.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Scene.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Textures.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Textures.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Timer.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Timer.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Vector2D.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Vector2D.obj
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Window.cpp;C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\PlatformGame\x64\Debug\Window.obj

@@ -1,20 +1,22 @@
-﻿  Scene.cpp
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Scene.cpp(81,74): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Scene.cpp(90,19): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Scene.cpp(89,83): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Scene.cpp(94,103): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Scene.cpp(94,85): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Scene.cpp(98,21): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Scene.cpp(97,21): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Scene.cpp(164,68): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\src\Scene.cpp(163,97): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  PlatformGame.vcxproj -> C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\x64\Debug\PlatformGame.exe
-  C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\Assets\Maps\MapMetadata.png
-  C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\Assets\Maps\MapTemplate.tmx
-  C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\Assets\Maps\staticItems.png
-  C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\Assets\Maps\Tileset_map.png
-  C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\Assets\Textures\goldCoin.png
-  C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\Assets\Textures\enemy\Idle.png
-  C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\Assets\Textures\player\Idle.png
-  C:\Users\saucx\Desktop\Nueva carpeta (2)\Platformer-Game-VGD-main\Assets\Textures\player\Idle_2.png
+﻿  Player.cpp
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(31,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(32,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(68,24): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(77,22): warning C4305: '=': truncamiento de 'double' a 'float'
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(86,21): warning C4305: '=': truncamiento de 'double' a 'float'
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(96,21): warning C4305: '=': truncamiento de 'double' a 'float'
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(102,22): warning C4305: '=': truncamiento de 'double' a 'float'
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(142,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(143,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(213,55): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(213,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  PlatformGame.vcxproj -> C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\x64\Debug\PlatformGame.exe
+  C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\Assets\Maps\MapMetadata.png
+  C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\Assets\Maps\MapTemplate.tmx
+  C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\Assets\Maps\staticItems.png
+  C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\Assets\Maps\Tileset_map.png
+  C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\Assets\Textures\goldCoin.png
+  C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\Assets\Textures\enemy\Idle.png
+  C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\Assets\Textures\player\Idle.png
+  C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\Assets\Textures\player\Idle_2.png
   8 archivo(s) copiado(s)
