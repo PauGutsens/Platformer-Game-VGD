@@ -36,7 +36,7 @@ bool Player::Start() {
 	// Cargar animaciones
 	idle.LoadAnimations(parameters.child("animations").child("idle"));
 	walk.LoadAnimations(parameters.child("animations").child("walk"));
-	walkLeft.LoadAnimations(parameters.child("animation").child("walkLeft")); // Asegúrate de que "walk" esté cargado también
+	walkLeft.LoadAnimations(parameters.child("animation").child("walkLeft")); 
 
 	// Establecer animación inicial
 	currentAnimation = &idle;
@@ -51,8 +51,7 @@ bool Player::Start() {
 		pbody->body->SetGravityScale(0);
 
 	// Inicializar efectos de audio
-	pickCoinFxId = Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/retro-video-game-coin-pickup-38299.ogg");
-	
+	pickCoinFxId = Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/coin-recieved-230517.ogg");
 	IsLookingRight = true;
 	IsDashing = false;
 	return true;
@@ -88,16 +87,18 @@ bool Player::Update(float dt)
 			IsLookingRight = false;
 		}
 	}
-
+	
 	/*LOG("IsLookingRight: %s", IsLookingRight ? "true" : "false");*/
 
 	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_LSHIFT) == KEY_REPEAT) {
 		IsDashing = true;
-		if (IsLookingRight) {
+		if (IsLookingRight == true) {
 			velocity.x = 0.4f * 16; // Dash speed to the right
 		}
-		else {
+		else
+		{
 			velocity.x = -0.4f * 16; // Dash speed to the left
+
 		}
 	}
 
@@ -108,20 +109,28 @@ bool Player::Update(float dt)
 
 	// Cambiar la animación según el estado
 	if (IsWalking) {
-		if (IsLookingRight = true) {
+		if (IsLookingRight == true) {
 			currentAnimation = &walk;
+			IsWalking = true;
+
 		}
-		if (IsLookingRight = false) {
+		if (IsLookingRight == false) {
 			currentAnimation = &walkLeft;
+			IsWalking = true;
+
 		}
 	}
 	else {
 		currentAnimation = &idle;
+		IsWalking = false;
+
 	}
 
 	//Jump
 	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN && !isJumping) {
 		pbody->body->ApplyLinearImpulseToCenter(b2Vec2(0, -jumpForce), true);
+		Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/jump.ogg");
+
 		isJumping = true;
 	}
 
@@ -137,6 +146,7 @@ bool Player::Update(float dt)
 			velocity.y = verticalVelocity;
 		}
 	}
+	
 
 	// Apply the velocity to the player
 	pbody->body->SetLinearVelocity(velocity);
@@ -146,7 +156,12 @@ bool Player::Update(float dt)
 	position.setY(METERS_TO_PIXELS(pbodyPos.p.y) - texH / 2);
 
 	// Dibujar la textura con la animación actual
-	Engine::GetInstance().render.get()->DrawTexture(texture, (int)position.getX(), (int)position.getY(), &currentAnimation->GetCurrentFrame());
+	Engine::GetInstance().render.get()->DrawTexture(
+		texture, // Textura que debe coincidir con la de la animación actual
+		(int)position.getX(),
+		(int)position.getY(),
+		&currentAnimation->GetCurrentFrame()
+	);
 	currentAnimation->Update();
 
 	return true;
@@ -188,7 +203,8 @@ void Player::OnCollision(PhysBody* physA, PhysBody* physB) {
 		}
 		break;
 	case ColliderType::DEATH:
-		
+		Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/level-failed.ogg");
+
 		break;
 	default:
 		break;

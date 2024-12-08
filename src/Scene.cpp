@@ -65,7 +65,7 @@ bool Scene::Start()
 	Engine::GetInstance().window.get()->GetWindowSize(w, h);
 	Engine::GetInstance().render.get()->camera.x = 0;
 	Engine::GetInstance().render.get()->camera.y = 0;
-
+	Engine::GetInstance().audio.get()->PlayMusic("Assets/Audio/Music/game-music-loop-3-144252.ogg", 0.1f);
 	return true;
 }
 
@@ -194,7 +194,7 @@ void Scene::SaveState() {
 
 	//enemies
 	// ...
-
+	Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/Checkpoint.ogg");
 	//Saves the modifications to the XML 
 	loadFile.save_file("config.xml");
 }
