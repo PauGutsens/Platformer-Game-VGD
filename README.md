@@ -9,9 +9,9 @@ This is an original platform genre game, where the objective is to go at the end
 - Player animations
 
 ### How to play:
-- Use 'A' to move right.
-- Use 'D' to move left. 
-- Use 'Space' to jump.
+- Use 'A' to move Right.
+- Use 'D' to move Left. 
+- Use 'Space' to Jump.
 - F9 Visualize the colliders / logic.
 
 
@@ -24,7 +24,7 @@ This is an original platform genre game, where the objective is to go at the end
     - Use Dash to kill the enemy
 - F5 to Save State
 - F6 to Load State
-- Enemy Entity with animations and basic behavoir
+- Enemy Entity with animations and basic behavior
 - Music and Fx:
   - Game Music, Death Fx, Checkpoint Fx 
 
