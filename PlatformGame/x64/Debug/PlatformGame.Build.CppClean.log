@@ -1,36 +1,26 @@
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\vc143.pdb
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\vc143.idb
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\window.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\vector2d.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\timer.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\textures.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\scene.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\render.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\player.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\physics.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\perftimer.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\pathfinding.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\map.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\log.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\item.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\input.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\entitymanager.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\engine.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\enemy.obj
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\audio.obj
-c:\users\saucx\documents\github\platformer-game-vgd\x64\debug\platformgame.exe
-c:\users\saucx\documents\github\platformer-game-vgd\x64\debug\platformgame.pdb
-c:\users\saucx\desktop\nueva carpeta (2)\platformer-game-vgd-main\x64\debug\pugixml.dll
-c:\users\saucx\desktop\nueva carpeta (2)\platformer-game-vgd-main\x64\debug\sdl2d.dll
-c:\users\saucx\desktop\nueva carpeta (2)\platformer-game-vgd-main\x64\debug\sdl2_imaged.dll
-c:\users\saucx\desktop\nueva carpeta (2)\platformer-game-vgd-main\x64\debug\libpng16d.dll
-c:\users\saucx\desktop\nueva carpeta (2)\platformer-game-vgd-main\x64\debug\zlibd1.dll
-c:\users\saucx\desktop\nueva carpeta (2)\platformer-game-vgd-main\x64\debug\sdl2_mixerd.dll
-c:\users\saucx\desktop\nueva carpeta (2)\platformer-game-vgd-main\x64\debug\vorbisfile.dll
-c:\users\saucx\desktop\nueva carpeta (2)\platformer-game-vgd-main\x64\debug\vorbis.dll
-c:\users\saucx\desktop\nueva carpeta (2)\platformer-game-vgd-main\x64\debug\ogg.dll
-c:\users\saucx\desktop\nueva carpeta (2)\platformer-game-vgd-main\x64\debug\wavpackdll.dll
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\vc143.pdb
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\vc143.idb
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\window.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\vector2d.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\timer.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\textures.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\scene.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\render.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\player.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\physics.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\perftimer.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\pathfinding.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\map.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\log.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\item.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\input.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\entitymanager.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\engine.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\enemy.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\audio.obj
+c:\users\saucpg\documents\github\platformer-game-vgd\x64\debug\platformgame.exe
+c:\users\saucpg\documents\github\platformer-game-vgd\x64\debug\platformgame.pdb
 c:\users\saucx\documents\github\platformer-game-vgd\x64\debug\pugixml.dll
 c:\users\saucx\documents\github\platformer-game-vgd\x64\debug\sdl2d.dll
 c:\users\saucx\documents\github\platformer-game-vgd\x64\debug\sdl2_imaged.dll
@@ -41,13 +31,23 @@ c:\users\saucx\documents\github\platformer-game-vgd\x64\debug\vorbisfile.dll
 c:\users\saucx\documents\github\platformer-game-vgd\x64\debug\vorbis.dll
 c:\users\saucx\documents\github\platformer-game-vgd\x64\debug\ogg.dll
 c:\users\saucx\documents\github\platformer-game-vgd\x64\debug\wavpackdll.dll
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.ilk
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\cl.command.1.tlog
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\cl.items.tlog
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\cl.read.1.tlog
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\cl.write.1.tlog
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\link.command.1.tlog
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\link.read.1.tlog
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\link.secondary.1.tlog
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\link.write.1.tlog
-c:\users\saucx\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\platformgame.write.1u.tlog
+c:\users\saucpg\documents\github\platformer-game-vgd\x64\debug\pugixml.dll
+c:\users\saucpg\documents\github\platformer-game-vgd\x64\debug\sdl2d.dll
+c:\users\saucpg\documents\github\platformer-game-vgd\x64\debug\sdl2_imaged.dll
+c:\users\saucpg\documents\github\platformer-game-vgd\x64\debug\libpng16d.dll
+c:\users\saucpg\documents\github\platformer-game-vgd\x64\debug\zlibd1.dll
+c:\users\saucpg\documents\github\platformer-game-vgd\x64\debug\sdl2_mixerd.dll
+c:\users\saucpg\documents\github\platformer-game-vgd\x64\debug\vorbisfile.dll
+c:\users\saucpg\documents\github\platformer-game-vgd\x64\debug\vorbis.dll
+c:\users\saucpg\documents\github\platformer-game-vgd\x64\debug\ogg.dll
+c:\users\saucpg\documents\github\platformer-game-vgd\x64\debug\wavpackdll.dll
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.ilk
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\cl.command.1.tlog
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\cl.items.tlog
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\cl.read.1.tlog
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\cl.write.1.tlog
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\link.command.1.tlog
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\link.read.1.tlog
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\link.secondary.1.tlog
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\link.write.1.tlog
+c:\users\saucpg\documents\github\platformer-game-vgd\platformgame\x64\debug\platformgame.tlog\platformgame.write.1u.tlog

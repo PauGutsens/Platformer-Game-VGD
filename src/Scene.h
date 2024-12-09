@@ -42,6 +42,8 @@ public:
 	void SaveState();
 	//L15 TODO 2: Implement the Save function
 
+	bool pendingToLoad;
+
 public:
 	// Get tilePosDebug value
 	std::string GetTilePosDebug() {

@@ -56,7 +56,7 @@ public:
 
 	pugi::xml_node parameters;
 	Animation* currentAnimation = nullptr;
-	Animation idle, walk, walkLeft;
+	Animation idle, walk, walkLeft, idleLeft, jump, dashing, dashingLeft;
 
 
 };

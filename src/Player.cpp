@@ -36,10 +36,18 @@ bool Player::Start() {
 	// Cargar animaciones
 	idle.LoadAnimations(parameters.child("animations").child("idle"));
 	walk.LoadAnimations(parameters.child("animations").child("walk"));
-	walkLeft.LoadAnimations(parameters.child("animation").child("walkLeft")); 
+	walkLeft.LoadAnimations(parameters.child("animations").child("walkLeft"));
+	idleLeft.LoadAnimations(parameters.child("animations").child("idleLeft"));
+	dashing.LoadAnimations(parameters.child("animations").child("dashing"));
+	dashingLeft.LoadAnimations(parameters.child("animations").child("dashingLeft"));
 
 	// Establecer animación inicial
-	currentAnimation = &idle;
+	if (IsLookingRight) {
+		currentAnimation = &idle;
+	}
+	else {
+		currentAnimation = &idleLeft;
+	}
 
 	// Configuración del cuerpo físico
 	pbody = Engine::GetInstance().physics.get()->CreateCircle((int)position.getX(), (int)position.getY(), texW / 2, bodyType::DYNAMIC);
@@ -64,7 +72,7 @@ bool Player::Update(float dt)
 	b2Vec2 velocity = b2Vec2(0, pbody->body->GetLinearVelocity().y);
 
 	if (!parameters.attribute("gravity").as_bool()) {
-		velocity = b2Vec2(0, 9.8);
+		velocity = b2Vec2(0, 0);
 	}
 
 	IsWalking = false; // Inicializamos el estado como false por defecto
@@ -92,13 +100,14 @@ bool Player::Update(float dt)
 
 	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_LSHIFT) == KEY_REPEAT) {
 		IsDashing = true;
+		IsWalking = true;
+		
 		if (IsLookingRight == true) {
 			velocity.x = 0.4f * 16; // Dash speed to the right
 		}
 		else
 		{
 			velocity.x = -0.4f * 16; // Dash speed to the left
-
 		}
 	}
 
@@ -109,19 +118,39 @@ bool Player::Update(float dt)
 
 	// Cambiar la animación según el estado
 	if (IsWalking) {
-		if (IsLookingRight == true) {
-			currentAnimation = &walk;
-			IsWalking = true;
+		if (IsDashing)
+		{
+			if (IsLookingRight == true) {
+				currentAnimation = &dashing;
+				IsWalking = true;
 
+			}
+			if (IsLookingRight == false) {
+				currentAnimation = &dashingLeft;
+				IsWalking = true;
+
+			}
 		}
-		if (IsLookingRight == false) {
-			currentAnimation = &walkLeft;
-			IsWalking = true;
+		else {
+			if (IsLookingRight == true) {
+				currentAnimation = &walk;
+				IsWalking = true;
 
+			}
+			if (IsLookingRight == false) {
+				currentAnimation = &walkLeft;
+				IsWalking = true;
+
+			}
 		}
 	}
 	else {
-		currentAnimation = &idle;
+		if (IsLookingRight) {
+			currentAnimation = &idle;
+		}
+		else {
+			currentAnimation = &idleLeft;
+		}
 		IsWalking = false;
 
 	}
@@ -140,7 +169,7 @@ bool Player::Update(float dt)
 
 		// Allow landing when vertical velocity is near zero
 		if (verticalVelocity > -0.1f && verticalVelocity < 0.1f) {
-			isJumping = false;
+			
 		}
 		else {
 			velocity.y = verticalVelocity;
@@ -198,13 +227,13 @@ void Player::OnCollision(PhysBody* physA, PhysBody* physB) {
 			Engine::GetInstance().physics.get()->DeletePhysBody(physB);
 		}
 		else {
-			/*Engine::GetInstance().scene.get()->LoadState();*/
+			Engine::GetInstance().scene.get()->LoadState();
 			LOG("YOU DIED");
 		}
 		break;
 	case ColliderType::DEATH:
 		Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/level-failed.ogg");
-
+	
 		break;
 	default:
 		break;
