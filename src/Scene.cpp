@@ -148,53 +148,72 @@ Vector2D Scene::GetPlayerPosition()
 // L15 TODO 1: Implement the Load function
 // L15 TODO 2: Implement the Save function
 void Scene::LoadState() {
-
 	pugi::xml_document loadFile;
 	pugi::xml_parse_result result = loadFile.load_file("config.xml");
 
-	if (result == NULL)
-	{
+	if (result == NULL) {
 		LOG("Could not load file. Pugi error: %s", result.description());
 		return;
 	}
 
 	pugi::xml_node sceneNode = loadFile.child("config").child("scene");
 
-	//Read XML and restore information
-
-	//Player position
-	Vector2D playerPos = Vector2D(sceneNode.child("entities").child("player").attribute("x").as_int(),
-		sceneNode.child("entities").child("player").attribute("y").as_int());
+	// Restore player position
+	Vector2D playerPos = Vector2D(
+		sceneNode.child("entities").child("player").attribute("x").as_int(),
+		sceneNode.child("entities").child("player").attribute("y").as_int()
+	);
 	player->SetPosition(playerPos);
 
-	//enemies
-	// ...
-
+	// Restore enemies
+	pugi::xml_node enemiesNode = sceneNode.child("entities").child("enemies");
+	for (pugi::xml_node enemyNode = enemiesNode.child("enemy"); enemyNode; enemyNode = enemyNode.next_sibling("enemy")) {
+		int id = enemyNode.attribute("id").as_int();
+		if (id < enemyList.size()) {
+			Enemy* enemy = enemyList[id];
+			Vector2D enemyPos = Vector2D(
+				enemyNode.attribute("x").as_int(),
+				enemyNode.attribute("y").as_int()
+			);
+			enemy->SetPosition(enemyPos);
+			enemy->active = enemyNode.attribute("alive").as_bool();
+		}
+	}
 }
 
 // L15 TODO 2: Implement the Save function
 void Scene::SaveState() {
-
 	pugi::xml_document loadFile;
 	pugi::xml_parse_result result = loadFile.load_file("config.xml");
 
-	if (result == NULL)
-	{
+	if (result == NULL) {
 		LOG("Could not load file. Pugi error: %s", result.description());
 		return;
 	}
 
 	pugi::xml_node sceneNode = loadFile.child("config").child("scene");
 
-	//Save info to XML 
-
-	//Player position
+	// Save player position
 	sceneNode.child("entities").child("player").attribute("x").set_value(player->GetPosition().getX());
 	sceneNode.child("entities").child("player").attribute("y").set_value(player->GetPosition().getY());
 
-	//enemies
-	// ...
-	Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/Checkpoint.ogg");
-	//Saves the modifications to the XML 
+	// Save enemies
+	pugi::xml_node enemiesNode = sceneNode.child("entities").child("enemies");
+	for (size_t i = 0; i < enemyList.size(); ++i) {
+		Enemy* enemy = enemyList[i];
+		pugi::xml_node enemyNode = enemiesNode.find_child_by_attribute("id", std::to_string(i).c_str());
+
+		if (!enemyNode) {
+			enemyNode = enemiesNode.append_child("enemy");
+			enemyNode.append_attribute("id") = std::to_string(i).c_str();
+		}
+
+		enemyNode.attribute("x").set_value(enemy->GetPosition().getX());
+		enemyNode.attribute("y").set_value(enemy->GetPosition().getY());
+		enemyNode.attribute("alive").set_value(enemy->active ? "true" : "false");
+	}
+
+	// Save the modifications to the XML
 	loadFile.save_file("config.xml");
+	Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/Checkpoint.ogg");
 }

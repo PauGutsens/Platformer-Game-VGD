@@ -40,6 +40,8 @@ bool Player::Start() {
 	idleLeft.LoadAnimations(parameters.child("animations").child("idleLeft"));
 	dashing.LoadAnimations(parameters.child("animations").child("dashing"));
 	dashingLeft.LoadAnimations(parameters.child("animations").child("dashingLeft"));
+	jump.LoadAnimations(parameters.child("animations").child("jump"));
+	jumpLeft.LoadAnimations(parameters.child("animations").child("jumpLeft"));
 
 	// Establecer animación inicial
 	if (IsLookingRight) {
@@ -62,6 +64,7 @@ bool Player::Start() {
 	pickCoinFxId = Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/coin-recieved-230517.ogg");
 	IsLookingRight = true;
 	IsDashing = false;
+	RespawnPosition = GetPosition();
 	return true;
 }
 
@@ -166,7 +169,14 @@ bool Player::Update(float dt)
 	// If the player is jumping, we don't want to apply gravity, we use the current velocity produced by the jump
 	if (isJumping) {
 		float verticalVelocity = pbody->body->GetLinearVelocity().y;
-
+		if (!IsDashing) {
+			if (IsLookingRight) {
+				currentAnimation = &jump;
+			}
+			else {
+				currentAnimation = &jumpLeft;
+			}
+		}
 		// Allow landing when vertical velocity is near zero
 		if (verticalVelocity > -0.1f && verticalVelocity < 0.1f) {
 			
@@ -227,13 +237,20 @@ void Player::OnCollision(PhysBody* physA, PhysBody* physB) {
 			Engine::GetInstance().physics.get()->DeletePhysBody(physB);
 		}
 		else {
-			Engine::GetInstance().scene.get()->LoadState();
+			/*SetPosition(RespawnPosition);*/
 			LOG("YOU DIED");
 		}
 		break;
 	case ColliderType::DEATH:
+		/*SetPosition(RespawnPosition);*/ //If I try using the LoadState() method it also crashes the game.
+		/*Engine::GetInstance().scene.get()->LoadState();*/
 		Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/level-failed.ogg");
 	
+		break;
+	case ColliderType::CHECKPOINT:
+		/*RespawnPosition = GetPosition();*/
+		Engine::GetInstance().physics.get()->DeletePhysBody(physB);
+
 		break;
 	default:
 		break;
@@ -259,10 +276,23 @@ void Player::OnCollisionEnd(PhysBody* physA, PhysBody* physB)
 }
 
 void Player::SetPosition(Vector2D pos) {
+	// Adjust for texture alignment
 	pos.setX(pos.getX() + texW / 2);
 	pos.setY(pos.getY() + texH / 2);
+
+	// Check if pbody is valid
+	if (!pbody || !pbody->body) {
+		LOG("Error: Physics body is null!");
+		return;
+	}
+
+	// Safely set the position in the physics world
 	b2Vec2 bodyPos = b2Vec2(PIXEL_TO_METERS(pos.getX()), PIXEL_TO_METERS(pos.getY()));
 	pbody->body->SetTransform(bodyPos, 0);
+
+	// Reset velocity to avoid unexpected motion
+	pbody->body->SetLinearVelocity(b2Vec2(0, 0));
+	pbody->body->SetAngularVelocity(0);
 }
 
 Vector2D Player::GetPosition() {
@@ -270,3 +300,4 @@ Vector2D Player::GetPosition() {
 	Vector2D pos = Vector2D(METERS_TO_PIXELS(bodyPos.x), METERS_TO_PIXELS(bodyPos.y));
 	return pos;
 }
+

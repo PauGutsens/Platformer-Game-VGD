@@ -30,6 +30,7 @@ bool Enemy::Start() {
 	position.setY(parameters.attribute("y").as_int());
 	texW = parameters.attribute("w").as_int();
 	texH = parameters.attribute("h").as_int();
+	alive = parameters.attribute("alive").as_bool();
 
 	//Load animations
 	idle.LoadAnimations(parameters.child("animations").child("idle"));

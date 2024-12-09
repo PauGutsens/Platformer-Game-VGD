@@ -17,7 +17,7 @@
 	<scene>
 		<map path="Assets/Maps/" name="MapTemplate.tmx" />
 		<entities>
-			<player x="404" y="655" w="32" h="32" texture="Assets/Textures/player/Idle.png" gravity="true">
+			<player x="560" y="569" w="32" h="32" texture="Assets/Textures/player/Idle.png" gravity="true">
 				<animations>
 					<walk loop="true" speed="0.5" texture="Assets/Textures/player/Idle.png">
 						<frame x="0" y="0" w="32" h="32" />
@@ -57,10 +57,16 @@
 						<frame x="128" y="96" w="32" h="32" />
 						<frame x="160" y="96" w="32" h="32" />
 					</dashingLeft>
+					<jump loop="false" speed="0" texture="Assets/Textures/player/Idle.png">
+						<frame x="0" y="128" w="32" h="32" />
+					</jump>
+					<jumpLeft loop="false" speed="0" texture="Assets/Textures/player/Idle.png">
+						<frame x="32" y="128" w="32" h="32" />
+					</jumpLeft>
 				</animations>
 			</player>
 			<enemies>
-				<enemy x="448" y="350" w="32" h="32" texture="Assets/Textures/enemy/Idle.png" gravity="true">
+				<enemy x="448" y="350" w="32" h="32" texture="Assets/Textures/enemy/Idle.png" gravity="true" alive="true">
 					<animations>
 						<idle loop="true" speed="0.25">
 							<frame x="0" y="0" w="32" h="32" />
@@ -72,6 +78,11 @@
 						</idle>
 					</animations>
 				</enemy>
+				<enemy id="0" />
+				<enemy id="1" />
+				<enemy id="2" />
+				<enemy id="3" />
+				<enemy id="4" />
 			</enemies>
 			<Items>
 				<item x="548" y="350" w="32" h="32" texture="Assets/Textures/goldCoin.png">

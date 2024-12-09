@@ -48,6 +48,7 @@ public:
 	int pickCoinFxId;
 	bool IsDashing;
 	bool IsLookingRight;
+	Vector2D RespawnPosition;
 
 	// L08 TODO 5: Add physics to the player - declare a Physics body
 	PhysBody* pbody;
@@ -56,7 +57,7 @@ public:
 
 	pugi::xml_node parameters;
 	Animation* currentAnimation = nullptr;
-	Animation idle, walk, walkLeft, idleLeft, jump, dashing, dashingLeft;
+	Animation idle, walk, walkLeft, idleLeft, jump, jumpLeft, dashing, dashingLeft;
 
 
 };
