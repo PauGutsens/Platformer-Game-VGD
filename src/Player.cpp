@@ -12,6 +12,7 @@
 Player::Player() : Entity(EntityType::PLAYER)
 {
 	name = "Player";
+	
 }
 
 Player::~Player() {
@@ -20,98 +21,180 @@ Player::~Player() {
 
 bool Player::Awake() {
 
-	//L03: TODO 2: Initialize Player parameters
-	position = Vector2D(96, 96);
 	return true;
 }
 
 bool Player::Start() {
 
-	//L03: TODO 2: Initialize Player parameters
+	// Inicializar texturas y parámetros
 	texture = Engine::GetInstance().textures.get()->Load(parameters.attribute("texture").as_string());
 	position.setX(parameters.attribute("x").as_int());
 	position.setY(parameters.attribute("y").as_int());
 	texW = parameters.attribute("w").as_int();
 	texH = parameters.attribute("h").as_int();
 
-	//Load animations
-	
+	// Cargar animaciones
 	idle.LoadAnimations(parameters.child("animations").child("idle"));
-	
 	walk.LoadAnimations(parameters.child("animations").child("walk"));
-	currentAnimation = &walk;
-	
+	walkLeft.LoadAnimations(parameters.child("animations").child("walkLeft"));
+	idleLeft.LoadAnimations(parameters.child("animations").child("idleLeft"));
+	dashing.LoadAnimations(parameters.child("animations").child("dashing"));
+	dashingLeft.LoadAnimations(parameters.child("animations").child("dashingLeft"));
 
-	// L08 TODO 5: Add physics to the player - initialize physics body
-	pbody = Engine::GetInstance().physics.get()->CreateCircle((int)position.getX(), (int)position.getY(), (texW / 2) - 1, bodyType::DYNAMIC);
+	// Establecer animación inicial
+	if (IsLookingRight) {
+		currentAnimation = &idle;
+	}
+	else {
+		currentAnimation = &idleLeft;
+	}
 
-	// L08 TODO 6: Assign player class (using "this") to the listener of the pbody. This makes the Physics module to call the OnCollision method
+	// Configuración del cuerpo físico
+	pbody = Engine::GetInstance().physics.get()->CreateCircle((int)position.getX(), (int)position.getY(), texW / 2, bodyType::DYNAMIC);
 	pbody->listener = this;
-
-	// L08 TODO 7: Assign collider type
 	pbody->ctype = ColliderType::PLAYER;
 
-	//initialize audio effect
-	pickCoinFxId = Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/retro-video-game-coin-pickup-38299.ogg");
+	// Configuración de la gravedad
+	if (!parameters.attribute("gravity").as_bool())
+		pbody->body->SetGravityScale(0);
 
+	// Inicializar efectos de audio
+	pickCoinFxId = Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/coin-recieved-230517.ogg");
+	IsLookingRight = true;
+	IsDashing = false;
 	return true;
 }
 
+
 bool Player::Update(float dt)
 {
-	// Obtener la velocidad inicial del cuerpo fÃ­sico
+	// L08 TODO 5: Add physics to the player - updated player position using physics
 	b2Vec2 velocity = b2Vec2(0, pbody->body->GetLinearVelocity().y);
 
-	// Variable para determinar si el jugador estÃ¡ en movimiento horizontal
-	bool isWalking = false;
-
-	// Movimiento hacia la izquierda
-	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) {
-		velocity.x = -0.2 * 16; // Velocidad hacia la izquierda
-		isWalking = true;      // El jugador estÃ¡ caminando
+	if (!parameters.attribute("gravity").as_bool()) {
+		velocity = b2Vec2(0, 0);
 	}
 
-	// Movimiento hacia la derecha
+	IsWalking = false; // Inicializamos el estado como false por defecto
+	
+
+
+	// Move right
 	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) {
-		velocity.x = 0.2 * 16; // Velocidad hacia la derecha
-		isWalking = true;      // El jugador estÃ¡ caminando
+		if (!IsDashing) {
+			velocity.x = 0.2 * 16;
+			IsWalking = true;
+			IsLookingRight = true;
+		}
 	}
 
-	// Saltar
+	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) {
+		if (!IsDashing) {
+			velocity.x = -0.2 * 16;
+			IsWalking = true;
+			IsLookingRight = false;
+		}
+	}
+	
+	/*LOG("IsLookingRight: %s", IsLookingRight ? "true" : "false");*/
+
+	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_LSHIFT) == KEY_REPEAT) {
+		IsDashing = true;
+		IsWalking = true;
+		
+		if (IsLookingRight == true) {
+			velocity.x = 0.4f * 16; // Dash speed to the right
+		}
+		else
+		{
+			velocity.x = -0.4f * 16; // Dash speed to the left
+		}
+	}
+
+	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_LSHIFT) == KEY_UP)
+	{
+		IsDashing = false;
+	}
+
+	// Cambiar la animación según el estado
+	if (IsWalking) {
+		if (IsDashing)
+		{
+			if (IsLookingRight == true) {
+				currentAnimation = &dashing;
+				IsWalking = true;
+
+			}
+			if (IsLookingRight == false) {
+				currentAnimation = &dashingLeft;
+				IsWalking = true;
+
+			}
+		}
+		else {
+			if (IsLookingRight == true) {
+				currentAnimation = &walk;
+				IsWalking = true;
+
+			}
+			if (IsLookingRight == false) {
+				currentAnimation = &walkLeft;
+				IsWalking = true;
+
+			}
+		}
+	}
+	else {
+		if (IsLookingRight) {
+			currentAnimation = &idle;
+		}
+		else {
+			currentAnimation = &idleLeft;
+		}
+		IsWalking = false;
+
+	}
+
+	//Jump
 	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN && !isJumping) {
-		// Impulso inicial hacia arriba
-		pbody->body->ApplyLinearImpulseToCenter(b2Vec2(0, -jumpForce + 0.6), true);
+		pbody->body->ApplyLinearImpulseToCenter(b2Vec2(0, -jumpForce), true);
+		Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/jump.ogg");
+
 		isJumping = true;
 	}
 
-	// Mantener la velocidad vertical actual si estÃ¡ saltando
+	// If the player is jumping, we don't want to apply gravity, we use the current velocity produced by the jump
 	if (isJumping) {
-		velocity.y = pbody->body->GetLinearVelocity().y;
-	}
+		float verticalVelocity = pbody->body->GetLinearVelocity().y;
 
-	// Aplicar la velocidad calculada al cuerpo fÃ­sico
+		// Allow landing when vertical velocity is near zero
+		if (verticalVelocity > -0.1f && verticalVelocity < 0.1f) {
+			
+		}
+		else {
+			velocity.y = verticalVelocity;
+		}
+	}
+	
+
+	// Apply the velocity to the player
 	pbody->body->SetLinearVelocity(velocity);
 
-	// Cambiar la animaciÃ³n segÃºn el estado
-	if (isWalking && currentAnimation != &walk) {
-		currentAnimation = &walk; // Activar animaciÃ³n de caminar
-	}
-	else if (!isWalking && currentAnimation != &idle) {
-		currentAnimation = &idle; // Activar animaciÃ³n de estar quieto
-	}
-
-	// Actualizar la posiciÃ³n del jugador basada en el cuerpo fÃ­sico
 	b2Transform pbodyPos = pbody->body->GetTransform();
 	position.setX(METERS_TO_PIXELS(pbodyPos.p.x) - texH / 2);
 	position.setY(METERS_TO_PIXELS(pbodyPos.p.y) - texH / 2);
 
-	// Dibujar la textura y actualizar la animaciÃ³n
-	Engine::GetInstance().render.get()->DrawTexture(texture, (int)position.getX(), (int)position.getY(), &currentAnimation->GetCurrentFrame());
+	// Dibujar la textura con la animación actual
+	Engine::GetInstance().render.get()->DrawTexture(
+		texture, // Textura que debe coincidir con la de la animación actual
+		(int)position.getX(),
+		(int)position.getY(),
+		&currentAnimation->GetCurrentFrame()
+	);
 	currentAnimation->Update();
 
 	return true;
 }
-
 
 
 bool Player::CleanUp()
@@ -121,20 +204,36 @@ bool Player::CleanUp()
 	return true;
 }
 
+
 // L08 TODO 6: Define OnCollision function for the player. 
 void Player::OnCollision(PhysBody* physA, PhysBody* physB) {
 	switch (physB->ctype)
 	{
 	case ColliderType::PLATFORM:
 		LOG("Collision PLATFORM");
-		//reset the jump flag when touching the ground
 		isJumping = false;
 		break;
 	case ColliderType::ITEM:
 		LOG("Collision ITEM");
+		Engine::GetInstance().audio.get()->PlayFx(pickCoinFxId);
+		Engine::GetInstance().physics.get()->DeletePhysBody(physB); // Deletes the body of the item from the physics world
 		break;
 	case ColliderType::UNKNOWN:
 		LOG("Collision UNKNOWN");
+		break;
+	case ColliderType::ENEMY:
+		if (IsDashing)
+		{
+			Engine::GetInstance().physics.get()->DeletePhysBody(physB);
+		}
+		else {
+			Engine::GetInstance().scene.get()->LoadState();
+			LOG("YOU DIED");
+		}
+		break;
+	case ColliderType::DEATH:
+		Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/level-failed.ogg");
+	
 		break;
 	default:
 		break;
@@ -150,7 +249,6 @@ void Player::OnCollisionEnd(PhysBody* physA, PhysBody* physB)
 		break;
 	case ColliderType::ITEM:
 		LOG("End Collision ITEM");
-		Engine::GetInstance().audio.get()->PlayFx(pickCoinFxId);
 		break;
 	case ColliderType::UNKNOWN:
 		LOG("End Collision UNKNOWN");
@@ -159,6 +257,7 @@ void Player::OnCollisionEnd(PhysBody* physA, PhysBody* physB)
 		break;
 	}
 }
+
 void Player::SetPosition(Vector2D pos) {
 	pos.setX(pos.getX() + texW / 2);
 	pos.setY(pos.getY() + texH / 2);

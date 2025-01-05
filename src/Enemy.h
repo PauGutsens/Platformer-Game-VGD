@@ -1,12 +1,11 @@
 #pragma once
+
+#include "Entity.h"
+#include "SDL2/SDL.h"
+#include "Animation.h"
 #include "Pathfinding.h"
 
 struct SDL_Texture;
-enum EnemyState {
-	ALIVE,
-	DEAD
-
-};
 
 class Enemy : public Entity
 {
@@ -26,9 +25,7 @@ public:
 	void SetParameters(pugi::xml_node parameters) {
 		this->parameters = parameters;
 	}
-	void OnCollision(PhysBody* physA, PhysBody* physB);
 
-	void OnCollisionEnd(PhysBody* physA, PhysBody* physB);
 	void SetPosition(Vector2D pos);
 
 	Vector2D GetPosition();
@@ -36,18 +33,15 @@ public:
 	void ResetPath();
 
 public:
-	float speed = 5.0f;
 
 private:
-
 
 	SDL_Texture* texture;
 	const char* texturePath;
 	int texW, texH;
 	pugi::xml_node parameters;
 	Animation* currentAnimation = nullptr;
-	Animation idle, walk;
+	Animation idle;
 	PhysBody* pbody;
 	Pathfinding* pathfinding;
 };
-

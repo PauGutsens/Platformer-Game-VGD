@@ -1,0 +1,174 @@
+﻿  Audio.cpp
+  Enemy.cpp
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Enemy.cpp(29,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Enemy.cpp(30,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Enemy.cpp(59,85): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Enemy.cpp(59,74): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Enemy.cpp(112,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Enemy.cpp(113,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Enemy.cpp(138,55): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Enemy.cpp(138,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Enemy.cpp(144,85): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Enemy.cpp(144,73): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  Engine.cpp
+  EntityManager.cpp
+  Input.cpp
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Input.cpp(145,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Input.cpp(145,18): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Input.cpp(150,32): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Input.cpp(150,18): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Item.cpp
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Item.cpp(26,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Item.cpp(27,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Item.cpp(52,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Item.cpp(53,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Log.cpp
+  Map.cpp
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(62,123): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(62,106): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(208,154): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(208,113): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(213,154): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(213,113): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(265,20): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(266,20): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(269,44): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(270,45): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(282,20): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(283,20): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(287,26): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(288,27): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(289,21): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Map.cpp(290,21): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Pathfinding.cpp
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(65,105): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(65,88): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(67,106): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(67,84): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(81,106): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(81,85): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(84,86): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(84,74): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(100,106): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(100,85): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(103,86): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(103,74): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(119,106): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(119,85): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(122,86): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(122,74): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(130,80): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(130,63): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(131,104): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(131,82): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(169,63): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(169,42): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(182,66): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(182,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(185,65): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(185,41): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(188,66): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(188,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(191,65): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(191,41): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(222,63): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(222,42): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(235,66): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(235,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(236,94): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(236,67): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(238,65): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(238,41): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(239,93): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(239,64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(241,66): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(241,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(242,94): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(242,67): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(244,65): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(244,41): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(245,93): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(245,64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(253,120): warning C4244: 'argumento': conversión de 'float' a 'const unsigned __int64'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(253,137): warning C4244: 'argumento': conversión de 'float' a 'const unsigned __int64'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(254,40): warning C4244: 'argumento': conversión de 'float' a 'const unsigned __int64'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(254,57): warning C4244: 'argumento': conversión de 'float' a 'const unsigned __int64'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(279,63): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(279,42): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(292,66): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(292,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(293,94): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(293,67): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(295,65): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(295,41): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(296,93): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(296,64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(298,66): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(298,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(299,94): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(299,67): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(301,65): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(301,41): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(302,93): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(302,64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(317,46): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(320,47): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(323,45): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(330,116): warning C4244: 'argumento': conversión de 'float' a 'const unsigned __int64'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(330,133): warning C4244: 'argumento': conversión de 'float' a 'const unsigned __int64'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(331,40): warning C4244: 'argumento': conversión de 'float' a 'const unsigned __int64'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(331,57): warning C4244: 'argumento': conversión de 'float' a 'const unsigned __int64'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(365,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Pathfinding.cpp(365,37): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  PerfTimer.cpp
+  Physics.cpp
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp(92,23): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp(93,25): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp(129,25): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp(130,26): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp(187,29): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp(440,13): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp(441,13): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Physics.cpp(447,27): warning C4244: 'return': conversión de 'float' a 'int'; posible pérdida de datos
+  PlatformGame.cpp
+  Player.cpp
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(31,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(32,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(68,24): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(78,21): warning C4305: '=': truncamiento de 'double' a 'float'
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(86,22): warning C4305: '=': truncamiento de 'double' a 'float'
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(145,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(146,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(224,55): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Player.cpp(224,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Render.cpp
+  Scene.cpp
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Scene.cpp(82,74): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Scene.cpp(91,19): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Scene.cpp(90,83): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Scene.cpp(95,103): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Scene.cpp(95,85): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Scene.cpp(99,21): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Scene.cpp(98,21): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Scene.cpp(167,68): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Scene.cpp(166,97): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Textures.cpp
+  Timer.cpp
+  Vector2D.cpp
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Vector2D.cpp(77,21): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\src\Vector2D.cpp(81,37): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+  Window.cpp
+  Generando código
+  Previous IPDB not found, fall back to full compilation.
+  All 1645 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Generación de código finalizada
+  PlatformGame.vcxproj -> C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\x64\Release\PlatformGame.exe
+  C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\Assets\Maps\MapMetadata.png
+  C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\Assets\Maps\MapTemplate.tmx
+  C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\Assets\Maps\staticItems.png
+  C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\Assets\Maps\Tileset_map.png
+  C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\Assets\Textures\goldCoin.png
+  C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\Assets\Textures\enemy\Idle.png
+  C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\Assets\Textures\player\Idle.png
+  C:\Users\saucx\Documents\GitHub\Platformer-Game-VGD\Assets\Textures\player\Idle_2.png
+  8 archivo(s) copiado(s)

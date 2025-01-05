@@ -12,7 +12,7 @@ class Player : public Entity
 public:
 
 	Player();
-	
+
 	virtual ~Player();
 
 	bool Awake();
@@ -31,9 +31,11 @@ public:
 	void SetParameters(pugi::xml_node parameters) {
 		this->parameters = parameters;
 	}
-void SetPosition(Vector2D pos);
 
-Vector2D GetPosition();
+	void SetPosition(Vector2D pos);
+
+	Vector2D GetPosition();
+
 
 public:
 
@@ -41,9 +43,11 @@ public:
 	float speed = 5.0f;
 	SDL_Texture* texture = NULL;
 	int texW, texH;
-
+	bool IsWalking;
 	//Audio fx
 	int pickCoinFxId;
+	bool IsDashing;
+	bool IsLookingRight;
 
 	// L08 TODO 5: Add physics to the player - declare a Physics body
 	PhysBody* pbody;
@@ -52,5 +56,7 @@ public:
 
 	pugi::xml_node parameters;
 	Animation* currentAnimation = nullptr;
-	Animation idle, walk;
+	Animation idle, walk, walkLeft, idleLeft, jump, dashing, dashingLeft;
+
+
 };

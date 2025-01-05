@@ -34,10 +34,10 @@ bool Enemy::Start() {
 	//Load animations
 	idle.LoadAnimations(parameters.child("animations").child("idle"));
 	currentAnimation = &idle;
-
-	//Add a physics to an item - initialize the physics body
-	pbody = Engine::GetInstance().physics.get()->CreateCircle((int)position.getX() + texH / 2, (int)position.getY() + texH / 2, texH / 2, bodyType::DYNAMIC);
-
+	
+	pbody = Engine::GetInstance().physics.get()->CreateCircle((int)position.getX(), (int)position.getY(), texW / 2, bodyType::DYNAMIC);
+	pbody->listener = this;
+	
 	//Assign collider type
 	pbody->ctype = ColliderType::ENEMY;
 
@@ -56,23 +56,12 @@ bool Enemy::Update(float dt)
 	// Pathfinding testing inputs
 	
 		Vector2D pos = GetPosition();
-		Vector2D tilePos = Engine::GetInstance().map.get()->WorldToMap(pos.getX(), pos.getY());
+		Vector2D tilePos = Engine::GetInstance().map.get()->WorldToMap(pos.getX(),pos.getY());
 		pathfinding->ResetPath(tilePos);
-	
-		/*pathfinding->PropagateAStar(MANHATTAN);
-	
-		pathfinding->PropagateAStar(EUCLIDEAN);*/
-	
-		b2Vec2 velocity = b2Vec2(0, pbody->body->GetLinearVelocity().y);
-
 		pathfinding->PropagateAStar(SQUARED);
+	
 
-		if (GetPosition())
-		{
-			currentAnimation = &idle;
-			velocity.x = 0.2 * 16
-
-		}
+	
 
 	// L08 TODO 4: Add a physics to an item - update the position of the object from the physics.  
 	b2Transform pbodyPos = pbody->body->GetTransform();
@@ -110,42 +99,4 @@ void Enemy::ResetPath() {
 	Vector2D pos = GetPosition();
 	Vector2D tilePos = Engine::GetInstance().map.get()->WorldToMap(pos.getX(), pos.getY());
 	pathfinding->ResetPath(tilePos);
-}
-
-void Enemy::OnCollision(PhysBody* physA, PhysBody* physB) {
-	switch (physB->ctype)
-	{
-	case ColliderType::PLATFORM:
-		LOG("Collision PLATFORM");
-		//reset the jump flag when touching the ground
-		isJumping = false;
-		break;
-	case ColliderType::PLAYER:
-		LOG("Collision PLAYER");
-		break;
-	case ColliderType::UNKNOWN:
-		LOG("Collision UNKNOWN");
-		break;
-	default:
-		break;
-	}
-}
-
-void Enemy::OnCollisionEnd(PhysBody* physA, PhysBody* physB)
-{
-	switch (physB->ctype)
-	{
-	case ColliderType::PLATFORM:
-		LOG("End Collision PLATFORM");
-		break;
-	case ColliderType::PLAYER:
-		LOG("End Collision PLAYER");
-		Engine::GetInstance().audio.get()->PlayFx(pickCoinFxId);
-		break;
-	case ColliderType::UNKNOWN:
-		LOG("End Collision UNKNOWN");
-		break;
-	default:
-		break;
-	}
 }

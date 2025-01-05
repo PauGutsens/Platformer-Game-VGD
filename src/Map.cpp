@@ -74,13 +74,13 @@ bool Map::Update(float dt)
 // L09: TODO 2: Implement function to the Tileset based on a tile id
 TileSet* Map::GetTilesetFromTileId(int gid) const
 {
-	TileSet* set = nullptr;
+    TileSet* set = nullptr;
 
     for (const auto& tileset : mapData.tilesets) {
-    	if (gid >= tileset->firstGid && gid < (tileset->firstGid + tileset->tileCount)) {
-			set = tileset;
-			break;
-		}
+        if (gid >= tileset->firstGid && gid < (tileset->firstGid + tileset->tileCount)) {
+            set = tileset;
+            break;
+        }
     }
 
     return set;
@@ -120,10 +120,10 @@ bool Map::Load(std::string path, std::string fileName)
     pugi::xml_document mapFileXML;
     pugi::xml_parse_result result = mapFileXML.load_file(mapPathName.c_str());
 
-    if(result == NULL)
-	{
-		LOG("Could not load map xml file %s. pugi error: %s", mapPathName.c_str(), result.description());
-		ret = false;
+    if (result == NULL)
+    {
+        LOG("Could not load map xml file %s. pugi error: %s", mapPathName.c_str(), result.description());
+        ret = false;
     }
     else {
 
@@ -134,27 +134,26 @@ bool Map::Load(std::string path, std::string fileName)
         mapData.tileWidth = mapFileXML.child("map").attribute("tilewidth").as_int();
         mapData.tileHeight = mapFileXML.child("map").attribute("tileheight").as_int();
 
-<<<<<<< HEAD
-=======
-	std::string orientationStr = mapFileXML.child("map").attribute("orientation").as_string();
- 	if (orientationStr == "orthogonal") {
-     	mapData.orientation = MapOrientation::ORTOGRAPHIC;
- 	}
- 	else if (orientationStr == "isometric") {
-    	mapData.orientation = MapOrientation::ISOMETRIC;
- 	}	
- 	else {
-   	  LOG("Map orientation not found");
-   	  ret = false;
- 	}
->>>>>>> parent of 7cff2f8 (Add files via upload)
+        // L10: TODO 2: Define a property to store the MapType and Load it from the map
+        std::string orientationStr = mapFileXML.child("map").attribute("orientation").as_string();
+        if (orientationStr == "orthogonal") {
+            mapData.orientation = MapOrientation::ORTOGRAPHIC;
+        }
+        else if (orientationStr == "isometric") {
+            mapData.orientation = MapOrientation::ISOMETRIC;
+        }
+        else {
+            LOG("Map orientation not found");
+            ret = false;
+        }
+
         // L06: TODO 4: Implement the LoadTileSet function to load the tileset properties
-       
+
         //Iterate the Tileset
-        for(pugi::xml_node tilesetNode = mapFileXML.child("map").child("tileset"); tilesetNode!=NULL; tilesetNode = tilesetNode.next_sibling("tileset"))
-		{
+        for (pugi::xml_node tilesetNode = mapFileXML.child("map").child("tileset"); tilesetNode != NULL; tilesetNode = tilesetNode.next_sibling("tileset"))
+        {
             //Load Tileset attributes
-			TileSet* tileSet = new TileSet();
+            TileSet* tileSet = new TileSet();
             tileSet->firstGid = tilesetNode.attribute("firstgid").as_int();
             tileSet->name = tilesetNode.attribute("name").as_string();
             tileSet->tileWidth = tilesetNode.attribute("tilewidth").as_int();
@@ -164,12 +163,12 @@ bool Map::Load(std::string path, std::string fileName)
             tileSet->tileCount = tilesetNode.attribute("tilecount").as_int();
             tileSet->columns = tilesetNode.attribute("columns").as_int();
 
-			//Load the tileset image
-			std::string imgName = tilesetNode.child("image").attribute("source").as_string();
-            tileSet->texture = Engine::GetInstance().textures->Load((mapPath+imgName).c_str());
+            //Load the tileset image
+            std::string imgName = tilesetNode.child("image").attribute("source").as_string();
+            tileSet->texture = Engine::GetInstance().textures->Load((mapPath + imgName).c_str());
 
-			mapData.tilesets.push_back(tileSet);
-		}
+            mapData.tilesets.push_back(tileSet);
+        }
 
         // L07: TODO 3: Iterate all layers in the TMX and load each of them
         for (pugi::xml_node layerNode = mapFileXML.child("map").child("layer"); layerNode != NULL; layerNode = layerNode.next_sibling("layer")) {
@@ -206,8 +205,16 @@ bool Map::Load(std::string path, std::string fileName)
                         int gid = mapLayer->Get(i, j);
                         if (gid == 1) {
                             Vector2D mapCoord = MapToWorld(i, j);
-                            PhysBody* c1 = Engine::GetInstance().physics.get()->CreateRectangle(mapCoord.getX()+ mapData.tileWidth/2, mapCoord.getY()+ mapData.tileHeight/2, mapData.tileWidth, mapData.tileHeight, STATIC);
+                            PhysBody* c1 = Engine::GetInstance().physics.get()->CreateRectangle(mapCoord.getX() + mapData.tileWidth / 2, mapCoord.getY() + mapData.tileHeight / 2, mapData.tileWidth, mapData.tileHeight, STATIC);
                             c1->ctype = ColliderType::PLATFORM;
+                        }
+                        if (gid == 3) {
+                            Vector2D mapCoord = MapToWorld(i, j);
+                            PhysBody* c1 = Engine::GetInstance().physics.get()->CreateRectangle(mapCoord.getX() + mapData.tileWidth / 2, mapCoord.getY() + mapData.tileHeight / 2, mapData.tileWidth, mapData.tileHeight, STATIC);
+                            c1->ctype = ColliderType::DEATH;
+                        }
+                        if (gid == 4) {
+                            Vector2D mapCoord = MapToWorld(i, j);
                         }
                     }
                 }
@@ -231,13 +238,13 @@ bool Map::Load(std::string path, std::string fileName)
                 LOG("tile width : %d tile height : %d", tileset->tileWidth, tileset->tileHeight);
                 LOG("spacing : %d margin : %d", tileset->spacing, tileset->margin);
             }
-            			
+
             LOG("Layers----");
 
             for (const auto& layer : mapData.layers) {
                 LOG("id : %d name : %s", layer->id, layer->name.c_str());
-				LOG("Layer width : %d Layer height : %d", layer->width, layer->height);
-            }   
+                LOG("Layer width : %d Layer height : %d", layer->width, layer->height);
+            }
         }
         else {
             LOG("Error while parsing map file: %s", mapPathName.c_str());
@@ -256,22 +263,20 @@ Vector2D Map::MapToWorld(int x, int y) const
 {
     Vector2D ret;
 
-<<<<<<< HEAD
-    ret.setX(x * mapData.tileWidth);
-    ret.setY(y * mapData.tileHeight);
-=======
- if (mapData.orientation == MapOrientation::ORTOGRAPHIC) {
-    ret.setX(x * mapData.tileWidth);
-    ret.setY(y * mapData.tileHeight);
-}
-else if (mapData.orientation == MapOrientation::ISOMETRIC) {
-    ret.setX(x * mapData.tileWidth / 2 - y * mapData.tileWidth / 2);
-    ret.setY(x * mapData.tileHeight / 2 + y * mapData.tileHeight / 2);
-}
+    // L09: TODO 3: Get the screen coordinates of tile positions for isometric maps 
+    if (mapData.orientation == MapOrientation::ORTOGRAPHIC) {
+        ret.setX(x * mapData.tileWidth);
+        ret.setY(y * mapData.tileHeight);
+    }
+    else if (mapData.orientation == MapOrientation::ISOMETRIC) {
+        ret.setX(x * mapData.tileWidth / 2 - y * mapData.tileWidth / 2);
+        ret.setY(x * mapData.tileHeight / 2 + y * mapData.tileHeight / 2);
+    }
 
     return ret;
 }
 
+// L10: TODO 5: Add method WorldToMap to obtain  map coordinates from screen coordinates 
 Vector2D Map::WorldToMap(int x, int y) {
 
     Vector2D ret(0, 0);
@@ -287,7 +292,6 @@ Vector2D Map::WorldToMap(int x, int y) {
         ret.setX(int((x / half_width + y / half_height) / 2));
         ret.setY(int((y / half_height - (x / half_width)) / 2));
     }
->>>>>>> parent of 7cff2f8 (Add files via upload)
 
     return ret;
 }
@@ -309,15 +313,28 @@ bool Map::LoadProperties(pugi::xml_node& node, Properties& properties)
     return ret;
 }
 
+MapLayer* Map::GetNavigationLayer() {
+    for (const auto& layer : mapData.layers) {
+        if (layer->properties.GetProperty("Navigation") != NULL &&
+            layer->properties.GetProperty("Navigation")->value) {
+            return layer;
+        }
+    }
+
+    return nullptr;
+}
+
 // L09: TODO 7: Implement a method to get the value of a custom property
 Properties::Property* Properties::GetProperty(const char* name)
 {
     for (const auto& property : propertyList) {
         if (property->name == name) {
-			return property;
-		}
+            return property;
+        }
     }
 
     return nullptr;
 }
+
+
 
