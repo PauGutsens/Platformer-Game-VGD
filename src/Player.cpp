@@ -26,7 +26,7 @@ bool Player::Awake() {
 
 bool Player::Start() {
 
-	// Inicializar texturas y par醡etros
+	// Inicializar texturas y par谩metros
 	texture = Engine::GetInstance().textures.get()->Load(parameters.attribute("texture").as_string());
 	position.setX(parameters.attribute("x").as_int());
 	position.setY(parameters.attribute("y").as_int());
@@ -41,7 +41,7 @@ bool Player::Start() {
 	dashing.LoadAnimations(parameters.child("animations").child("dashing"));
 	dashingLeft.LoadAnimations(parameters.child("animations").child("dashingLeft"));
 
-	// Establecer animaci髇 inicial
+	// Establecer animaci贸n inicial
 	if (IsLookingRight) {
 		currentAnimation = &idle;
 	}
@@ -49,12 +49,12 @@ bool Player::Start() {
 		currentAnimation = &idleLeft;
 	}
 
-	// Configuraci髇 del cuerpo f韘ico
+	// Configuraci贸n del cuerpo f铆sico
 	pbody = Engine::GetInstance().physics.get()->CreateCircle((int)position.getX(), (int)position.getY(), texW / 2, bodyType::DYNAMIC);
 	pbody->listener = this;
 	pbody->ctype = ColliderType::PLAYER;
 
-	// Configuraci髇 de la gravedad
+	// Configuraci贸n de la gravedad
 	if (!parameters.attribute("gravity").as_bool())
 		pbody->body->SetGravityScale(0);
 
@@ -116,7 +116,12 @@ bool Player::Update(float dt)
 		IsDashing = false;
 	}
 
-	// Cambiar la animaci髇 seg鷑 el estado
+	if (shouldReloadState) {
+		shouldReloadState = false; // Reseteamos la bandera
+		Engine::GetInstance().scene.get()->LoadState();
+	}
+
+	// Cambiar la animaci贸n seg煤n el estado
 	if (IsWalking) {
 		if (IsDashing)
 		{
@@ -177,6 +182,7 @@ bool Player::Update(float dt)
 	}
 	
 
+
 	// Apply the velocity to the player
 	pbody->body->SetLinearVelocity(velocity);
 
@@ -184,9 +190,9 @@ bool Player::Update(float dt)
 	position.setX(METERS_TO_PIXELS(pbodyPos.p.x) - texH / 2);
 	position.setY(METERS_TO_PIXELS(pbodyPos.p.y) - texH / 2);
 
-	// Dibujar la textura con la animaci髇 actual
+	// Dibujar la textura con la animaci贸n actual
 	Engine::GetInstance().render.get()->DrawTexture(
-		texture, // Textura que debe coincidir con la de la animaci髇 actual
+		texture, // Textura que debe coincidir con la de la animaci贸n actual
 		(int)position.getX(),
 		(int)position.getY(),
 		&currentAnimation->GetCurrentFrame()
@@ -227,13 +233,17 @@ void Player::OnCollision(PhysBody* physA, PhysBody* physB) {
 			Engine::GetInstance().physics.get()->DeletePhysBody(physB);
 		}
 		else {
-			Engine::GetInstance().scene.get()->LoadState();
-			LOG("YOU DIED");
+			isDead = true;
+			Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/level-failed.ogg");
+			LOG("Player died - Level will restart");
 		}
 		break;
 	case ColliderType::DEATH:
+		
+		isDead = true;
 		Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/level-failed.ogg");
-	
+		LOG("Player died - Level will restart");
+
 		break;
 	default:
 		break;
