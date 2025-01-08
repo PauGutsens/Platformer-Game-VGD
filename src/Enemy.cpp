@@ -15,88 +15,98 @@ Enemy::Enemy() : Entity(EntityType::ENEMY)
 }
 
 Enemy::~Enemy() {
-	delete pathfinding;
+    delete pathfinding;
 }
 
 bool Enemy::Awake() {
-	return true;
+    return true;
 }
 
 bool Enemy::Start() {
+    //initilize textures
+    texture = Engine::GetInstance().textures.get()->Load(parameters.attribute("texture").as_string());
+    position.setX(parameters.attribute("x").as_int());
+    position.setY(parameters.attribute("y").as_int());
+    texW = parameters.attribute("w").as_int();
+    texH = parameters.attribute("h").as_int();
 
-	//initilize textures
-	texture = Engine::GetInstance().textures.get()->Load(parameters.attribute("texture").as_string());
-	position.setX(parameters.attribute("x").as_int());
-	position.setY(parameters.attribute("y").as_int());
-	texW = parameters.attribute("w").as_int();
-	texH = parameters.attribute("h").as_int();
+    //Load animations
+    idle.LoadAnimations(parameters.child("animations").child("idle"));
+    currentAnimation = &idle;
 
-	//Load animations
-	idle.LoadAnimations(parameters.child("animations").child("idle"));
-	currentAnimation = &idle;
-	
-	pbody = Engine::GetInstance().physics.get()->CreateCircle((int)position.getX(), (int)position.getY(), texW / 2, bodyType::DYNAMIC);
-	pbody->listener = this;
-	
-	//Assign collider type
-	pbody->ctype = ColliderType::ENEMY;
+    pbody = Engine::GetInstance().physics.get()->CreateCircle((int)position.getX(), (int)position.getY(), texW / 2, bodyType::DYNAMIC);
+    pbody->listener = this;
 
-	// Set the gravity of the body
-	if (!parameters.attribute("gravity").as_bool()) pbody->body->SetGravityScale(0);
+    //Assign collider type
+    pbody->ctype = ColliderType::ENEMY;
 
-	// Initialize pathfinding
-	pathfinding = new Pathfinding();
-	ResetPath();
+    // Set the gravity of the body
+    if (!parameters.attribute("gravity").as_bool()) pbody->body->SetGravityScale(0);
 
-	return true;
+    // Initialize pathfinding
+    pathfinding = new Pathfinding();
+    ResetPath();
+
+    return true;
 }
 
 bool Enemy::Update(float dt)
 {
-	// Pathfinding testing inputs
-	
-		Vector2D pos = GetPosition();
-		Vector2D tilePos = Engine::GetInstance().map.get()->WorldToMap(pos.getX(),pos.getY());
-		pathfinding->ResetPath(tilePos);
-		pathfinding->PropagateAStar(SQUARED);
-	
+    
+    // Get enemy and player positions
+    Vector2D enemyPos = GetPosition();
+    Vector2D playerPos = Engine::GetInstance().scene.get()->GetPlayerPosition();
 
-	
+    // Calculate direction to player
+    Vector2D direction;
+    direction.setX(playerPos.getX() - enemyPos.getX());
+    direction.setY(playerPos.getY() - enemyPos.getY());
 
-	// L08 TODO 4: Add a physics to an item - update the position of the object from the physics.  
-	b2Transform pbodyPos = pbody->body->GetTransform();
-	position.setX(METERS_TO_PIXELS(pbodyPos.p.x) - texH / 2);
-	position.setY(METERS_TO_PIXELS(pbodyPos.p.y) - texH / 2);
+    // Normalize direction
+    float length = sqrt(direction.getX() * direction.getX() + direction.getY() * direction.getY());
+    if (length > 0) {
+        direction.setX(direction.getX() / length);
+        direction.setY(direction.getY() / length);
+    }
 
-	Engine::GetInstance().render.get()->DrawTexture(texture, (int)position.getX(), (int)position.getY(), &currentAnimation->GetCurrentFrame());
-	currentAnimation->Update();
+    // Apply movement using physics
+    b2Vec2 velocity;
+    velocity.x = direction.getX() * speed;
+    velocity.y = direction.getY() * speed;
+    pbody->body->SetLinearVelocity(velocity);
 
-	// Draw pathfinding 
-	pathfinding->DrawPath();
+    // Update position from physics
+    b2Transform pbodyPos = pbody->body->GetTransform();
+    position.setX(METERS_TO_PIXELS(pbodyPos.p.x) - texH / 2);
+    position.setY(METERS_TO_PIXELS(pbodyPos.p.y) - texH / 2);
 
-	return true;
+    // Draw enemy
+    Engine::GetInstance().render.get()->DrawTexture(texture, (int)position.getX(), (int)position.getY(), &currentAnimation->GetCurrentFrame());
+    currentAnimation->Update();
+
+    return true;
 }
 
 bool Enemy::CleanUp()
 {
-	return true;
+    return true;
 }
 
 void Enemy::SetPosition(Vector2D pos) {
-	pos.setX(pos.getX() + texW / 2);
-	pos.setY(pos.getY() + texH / 2);
-	b2Vec2 bodyPos = b2Vec2(PIXEL_TO_METERS(pos.getX()), PIXEL_TO_METERS(pos.getY()));
-	pbody->body->SetTransform(bodyPos, 0);
+    pos.setX(pos.getX() + texW / 2);
+    pos.setY(pos.getY() + texH / 2);
+    b2Vec2 bodyPos = b2Vec2(PIXEL_TO_METERS(pos.getX()), PIXEL_TO_METERS(pos.getY()));
+    pbody->body->SetTransform(bodyPos, 0);
 }
 
 Vector2D Enemy::GetPosition() {
-	b2Vec2 bodyPos = pbody->body->GetTransform().p;
-	Vector2D pos = Vector2D(METERS_TO_PIXELS(bodyPos.x), METERS_TO_PIXELS(bodyPos.y));
-	return pos;
+    b2Vec2 bodyPos = pbody->body->GetTransform().p;
+    Vector2D pos = Vector2D(METERS_TO_PIXELS(bodyPos.x), METERS_TO_PIXELS(bodyPos.y));
+    return pos;
 }
 
 void Enemy::ResetPath() {
-	Vector2D pos = GetPosition();
-	Vector2D tilePos = Engine::GetInstance().map.get()->WorldToMap(pos.getX(), pos.getY());
-	pathfinding->ResetPath(tilePos);
+    Vector2D pos = GetPosition();
+    Vector2D tilePos = Engine::GetInstance().map.get()->WorldToMap(pos.getX(), pos.getY());
+    pathfinding->ResetPath(tilePos);
 }
