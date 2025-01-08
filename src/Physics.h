@@ -53,6 +53,7 @@ public:
 	b2Body* body;
 	Entity* listener;
 	ColliderType ctype;
+
 };
 
 // Module --------------------------------------
@@ -81,11 +82,11 @@ public:
 	void EndContact(b2Contact* contact);
 
 	void DeletePhysBody(PhysBody* physBody);
-
+	bool debug;
 private:
 
 	// Debug mode
-	bool debug;
+	
 
 	// Box2D World
 	b2World* world;
