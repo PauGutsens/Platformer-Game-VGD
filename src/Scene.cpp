@@ -117,6 +117,11 @@ bool Scene::Update(float dt)
 	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_F5) == KEY_DOWN)
 		SaveState();
 
+	if (player->isDead) {
+		player->isDead = false; // Reset la bandera
+		LoadState();  // Recargar el nivel
+	}
+
 	return true;
 }
 
