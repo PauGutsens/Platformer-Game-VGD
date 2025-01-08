@@ -17,7 +17,7 @@ public:
     bool Start();
     bool Update(float dt);
     bool CleanUp();
-
+    void OnCollision(PhysBody* physA, PhysBody* physB);
     void SetParameters(pugi::xml_node parameters) {
         this->parameters = parameters;
     }
@@ -36,5 +36,6 @@ private:
     Animation idle;
     PhysBody* pbody;
     Pathfinding* pathfinding;
-    float speed = 3.0f; // Enemy's velocity
+    float speed = 3.0f; // Velocidad del enemigo
+
 };
