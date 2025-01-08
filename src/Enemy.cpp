@@ -23,6 +23,7 @@ bool Enemy::Awake() {
 }
 
 bool Enemy::Start() {
+
     //initilize textures
     texture = Engine::GetInstance().textures.get()->Load(parameters.attribute("texture").as_string());
     position.setX(parameters.attribute("x").as_int());
@@ -34,11 +35,19 @@ bool Enemy::Start() {
     idle.LoadAnimations(parameters.child("animations").child("idle"));
     currentAnimation = &idle;
 
-    pbody = Engine::GetInstance().physics.get()->CreateCircle((int)position.getX(), (int)position.getY(), texW / 2, bodyType::DYNAMIC);
+    pbody = Engine::GetInstance().physics.get()->CreateCircle(
+        (int)position.getX(),
+        (int)position.getY(),
+        texW / 2,
+        bodyType::DYNAMIC);
     pbody->listener = this;
-
-    //Assign collider type
     pbody->ctype = ColliderType::ENEMY;
+
+    // Asegurarse de que tenga gravedad
+    pbody->body->SetGravityScale(1.0f);
+
+    // Evitar que rote
+    pbody->body->SetFixedRotation(true);
 
     // Set the gravity of the body
     if (!parameters.attribute("gravity").as_bool()) pbody->body->SetGravityScale(0);
@@ -52,36 +61,37 @@ bool Enemy::Start() {
 
 bool Enemy::Update(float dt)
 {
-    
     // Get enemy and player positions
     Vector2D enemyPos = GetPosition();
     Vector2D playerPos = Engine::GetInstance().scene.get()->GetPlayerPosition();
 
-    // Calculate direction to player
-    Vector2D direction;
-    direction.setX(playerPos.getX() - enemyPos.getX());
-    direction.setY(playerPos.getY() - enemyPos.getY());
+    // Calculate direction to player solo en X
+    float directionX = playerPos.getX() - enemyPos.getX();
+    float length = abs(directionX);
 
-    // Normalize direction
-    float length = sqrt(direction.getX() * direction.getX() + direction.getY() * direction.getY());
+    // Normalizar la dirección X
     if (length > 0) {
-        direction.setX(direction.getX() / length);
-        direction.setY(direction.getY() / length);
+        directionX = directionX / length;
     }
 
-    // Apply movement using physics
-    b2Vec2 velocity;
-    velocity.x = direction.getX() * speed;
-    velocity.y = direction.getY() * speed;
+    // Mantener la velocidad Y actual (para gravedad)
+    b2Vec2 velocity = pbody->body->GetLinearVelocity();
+    velocity.x = directionX * speed;
+    // No modificamos velocity.y para permitir que la gravedad funcione
+
+    // Aplicar el movimiento usando física
     pbody->body->SetLinearVelocity(velocity);
 
-    // Update position from physics
+    // Actualizar posición desde la física
     b2Transform pbodyPos = pbody->body->GetTransform();
     position.setX(METERS_TO_PIXELS(pbodyPos.p.x) - texH / 2);
     position.setY(METERS_TO_PIXELS(pbodyPos.p.y) - texH / 2);
 
-    // Draw enemy
-    Engine::GetInstance().render.get()->DrawTexture(texture, (int)position.getX(), (int)position.getY(), &currentAnimation->GetCurrentFrame());
+    // Dibujar enemigo
+    Engine::GetInstance().render.get()->DrawTexture(texture,
+        (int)position.getX(),
+        (int)position.getY(),
+        &currentAnimation->GetCurrentFrame());
     currentAnimation->Update();
 
     return true;
@@ -110,3 +120,16 @@ void Enemy::ResetPath() {
     Vector2D tilePos = Engine::GetInstance().map.get()->WorldToMap(pos.getX(), pos.getY());
     pathfinding->ResetPath(tilePos);
 }
+
+void Enemy::OnCollision(PhysBody* physA, PhysBody* physB) 
+{
+    switch (physB->ctype) {
+    case ColliderType::DEATH:
+        LOG("Enemy collided with DEATH collider. Removing enemy.");
+        Engine::GetInstance().physics.get()->DeletePhysBody(physA); // Eliminar el cuerpo del enemigo
+        break;
+    default:
+        LOG("Enemy collided with another collider.");
+        break;
+    }
+}    
