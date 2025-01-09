@@ -36,24 +36,8 @@ bool Render::Awake()
 	SDL_Window* window = Engine::GetInstance().window.get()->window;
 	renderer = SDL_CreateRenderer(window, -1, flags);
 
-	if (renderer == NULL)
-	{
-		LOG("Could not create the renderer! SDL_Error: %s\n", SDL_GetError());
-		ret = false;
-	}
-	else
-	{
-		camera.w = Engine::GetInstance().window.get()->width * scale;
-		camera.h = Engine::GetInstance().window.get()->height * scale;
-		camera.x = 0;
-		camera.y = 0;
-	}
-
-	//initialise the SDL_ttf library
-	TTF_Init();
-
-	//load a font into memory
-	font = TTF_OpenFont("Assets/Fonts/arial/arial.ttf", 25);
+	
+		
 
 	return ret;
 }
@@ -119,15 +103,14 @@ bool Render::DrawTexture(SDL_Texture* texture, int x, int y, const SDL_Rect* sec
 	rect.x = (int)(camera.x * speed) + x * scale;
 	rect.y = (int)(camera.y * speed) + y * scale;
 
-	if (section != NULL)
-	{
+	
 		rect.w = section->w;
 		rect.h = section->h;
-	}
-	else
-	{
+	
+	
+	
 		SDL_QueryTexture(texture, NULL, NULL, &rect.w, &rect.h);
-	}
+	
 
 	rect.w *= scale;
 	rect.h *= scale;
@@ -135,18 +118,12 @@ bool Render::DrawTexture(SDL_Texture* texture, int x, int y, const SDL_Rect* sec
 	SDL_Point* p = NULL;
 	SDL_Point pivot;
 
-	if (pivotX != INT_MAX && pivotY != INT_MAX)
-	{
 		pivot.x = pivotX;
 		pivot.y = pivotY;
 		p = &pivot;
-	}
 
-	if (SDL_RenderCopyEx(renderer, texture, section, &rect, angle, p, SDL_FLIP_NONE) != 0)
-	{
-		LOG("Cannot blit to screen. SDL_RenderCopy error: %s", SDL_GetError());
-		ret = false;
-	}
+		
+
 
 	return ret;
 }
@@ -160,21 +137,11 @@ bool Render::DrawRectangle(const SDL_Rect& rect, Uint8 r, Uint8 g, Uint8 b, Uint
 	SDL_SetRenderDrawColor(renderer, r, g, b, a);
 
 	SDL_Rect rec(rect);
-	if (use_camera)
-	{
-		rec.x = (int)(camera.x + rect.x * scale);
-		rec.y = (int)(camera.y + rect.y * scale);
-		rec.w *= scale;
-		rec.h *= scale;
-	}
+	
 
 	int result = (filled) ? SDL_RenderFillRect(renderer, &rec) : SDL_RenderDrawRect(renderer, &rec);
 
-	if (result != 0)
-	{
-		LOG("Cannot draw quad to screen. SDL_RenderFillRect error: %s", SDL_GetError());
-		ret = false;
-	}
+	
 
 	return ret;
 }
@@ -189,16 +156,7 @@ bool Render::DrawLine(int x1, int y1, int x2, int y2, Uint8 r, Uint8 g, Uint8 b,
 
 	int result = -1;
 
-	if (use_camera)
-		result = SDL_RenderDrawLine(renderer, camera.x + x1 * scale, camera.y + y1 * scale, camera.x + x2 * scale, camera.y + y2 * scale);
-	else
-		result = SDL_RenderDrawLine(renderer, x1 * scale, y1 * scale, x2 * scale, y2 * scale);
-
-	if (result != 0)
-	{
-		LOG("Cannot draw quad to screen. SDL_RenderFillRect error: %s", SDL_GetError());
-		ret = false;
-	}
+	
 
 	return ret;
 }
@@ -216,40 +174,12 @@ bool Render::DrawCircle(int x, int y, int radius, Uint8 r, Uint8 g, Uint8 b, Uin
 
 	float factor = (float)M_PI / 180.0f;
 
-	for (int i = 0; i < 360; ++i)
-	{
-		points[i].x = (int)(x * scale + camera.x) + (int)(radius * cos(i * factor));
-		points[i].y = (int)(y * scale + camera.y) + (int)(radius * sin(i * factor));
-	}
+	
 
 	result = SDL_RenderDrawPoints(renderer, points, 360);
 
-	if (result != 0)
-	{
-		LOG("Cannot draw quad to screen. SDL_RenderFillRect error: %s", SDL_GetError());
-		ret = false;
-	}
+	
 
 	return ret;
-}
-
-bool Render::DrawText(const char* text, int posx, int posy, int w, int h) const
-{
-
-	SDL_Color color = { 255, 255, 255 };
-	SDL_Surface* surface = TTF_RenderText_Solid(font, text, color);
-	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-
-	int texW = 0;
-	int texH = 0;
-	SDL_QueryTexture(texture, NULL, NULL, &texW, &texH);
-	SDL_Rect dstrect = { posx, posy, w, h };
-
-	SDL_RenderCopy(renderer, texture, NULL, &dstrect);
-
-	SDL_DestroyTexture(texture);
-	SDL_FreeSurface(surface);
-
-	return true;
 }
 
