@@ -3,6 +3,7 @@
 #include <string>
 #include "pugixml.hpp"
 
+class GuiControl;
 
 class Module
 {
@@ -51,13 +52,19 @@ public:
 	{
 		return true;
 	}
-	
+
 	//L05 TODO 4a: Declare a function to read the XML parameters	
 	virtual bool LoadParameters(pugi::xml_node parameters)
 	{
 		configParameters = parameters;
 		return true;
 	}
+
+	virtual bool OnGuiMouseClickEvent(GuiControl* control)
+	{
+		return true;
+	}
+
 public:
 
 	std::string name;
