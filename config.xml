@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<config>
+	<engine>
+		<title>My platformer game</title>
+		<maxFrameDuration value="16" />
+	</engine>
+	<render>
+		<vsync value="false" />
+	</render>
+	<window>
+		<resolution width="1280" height="720" scale="1" />
+		<fullscreen value="false" />
+		<borderless value="false" />
+		<resizable value="false" />
+		<fullscreen_window value="false" />
+	</window>
+	<scene>
+		<map path="Assets/Maps/" name="MapTemplate.tmx" />
+		<entities>
+			<player x="404" y="655" w="32" h="32" texture="Assets/Textures/player/Idle.png" gravity="true">
+				<animations>
+					<walk loop="true" speed="0.5" texture="Assets/Textures/player/Idle.png">
+						<frame x="0" y="0" w="32" h="32" />
+						<frame x="32" y="0" w="32" h="32" />
+						<frame x="64" y="0" w="32" h="32" />
+						<frame x="96" y="0" w="32" h="32" />
+						<frame x="128" y="0" w="32" h="32" />
+						<frame x="160" y="0" w="32" h="32" />
+					</walk>
+					<idle loop="false" speed="0" texture="Assets/Textures/player/Idle.png">
+						<frame x="0" y="0" w="32" h="32" />
+					</idle>
+					<walkLeft loop="true" speed="0.5" texture="Assets/Textures/player/Idle.png">
+						<frame x="0" y="32" w="32" h="32" />
+						<frame x="32" y="32" w="32" h="32" />
+						<frame x="64" y="32" w="32" h="32" />
+						<frame x="96" y="32" w="32" h="32" />
+						<frame x="128" y="32" w="32" h="32" />
+						<frame x="160" y="32" w="32" h="32" />
+					</walkLeft>
+					<idleLeft loop="false" speed="0" texture="Assets/Textures/player/Idle.png">
+						<frame x="160" y="32" w="32" h="32" />
+					</idleLeft>
+					<dashing loop="true" speed="0.7" texture="Assets/Textures/player/Idle.png">
+						<frame x="0" y="64" w="32" h="32" />
+						<frame x="32" y="64" w="32" h="32" />
+						<frame x="64" y="64" w="32" h="32" />
+						<frame x="96" y="64" w="32" h="32" />
+						<frame x="128" y="64" w="32" h="32" />
+						<frame x="160" y="64" w="32" h="32" />
+					</dashing>
+					<dashingLeft loop="true" speed="0.7" texture="Assets/Textures/player/Idle.png">
+						<frame x="0" y="96" w="32" h="32" />
+						<frame x="32" y="96" w="32" h="32" />
+						<frame x="64" y="96" w="32" h="32" />
+						<frame x="96" y="96" w="32" h="32" />
+						<frame x="128" y="96" w="32" h="32" />
+						<frame x="160" y="96" w="32" h="32" />
+					</dashingLeft>
+				</animations>
+			</player>
+			<enemies>
+				<enemy x="448" y="350" w="32" h="32" texture="Assets/Textures/enemy/walking_enemy.png" gravity="true">
+					<animations>
+						<walkingRight loop="true" speed="0.25">
+							<frame x="0" y="0" w="32" h="32" />
+							<frame x="32" y="0" w="32" h="32" />
+							<frame x="64" y="0" w="32" h="32" />
+							<frame x="96" y="0" w="32" h="32" />
+							<frame x="128" y="0" w="32" h="32" />
+							<frame x="160" y="0" w="32" h="32" />
+						</walkingRight>
+						<walkingLeft loop="true" speed="0.25" texture="Assets/Textures/enemy/walking_enemy.png">
+							<frame x="0" y="32" w="32" h="32" />
+							<frame x="32" y="32" w="32" h="32" />
+							<frame x="64" y="32" w="32" h="32" />
+							<frame x="96" y="32" w="32" h="32" />
+							<frame x="128" y="32" w="32" h="32" />
+							<frame x="160" y="32" w="32" h="32" />
+						</walkingLeft>
+					</animations>
+				</enemy>
+				<enemy x="600" y="250" w="32" h="32" texture="Assets/Textures/enemy/flying_enemy.png" gravity="false">
+					<animations>
+						<flyingRight loop="true" speed="0.25">
+							<frame x="0" y="0" w="32" h="32" />
+							<frame x="32" y="0" w="32" h="32" />
+							<frame x="64" y="0" w="32" h="32" />
+							<frame x="96" y="0" w="32" h="32" />
+							<frame x="128" y="0" w="32" h="32" />
+							<frame x="160" y="0" w="32" h="32" />
+						</flyingRight>
+						<flyingLeft loop="true" speed="0.25" texture="Assets/Textures/enemy/flying_enemy.png">
+							<frame x="0" y="32" w="32" h="32" />
+							<frame x="32" y="32" w="32" h="32" />
+							<frame x="64" y="32" w="32" h="32" />
+							<frame x="96" y="32" w="32" h="32" />
+							<frame x="128" y="32" w="32" h="32" />
+							<frame x="160" y="32" w="32" h="32" />
+						</flyingLeft>
+					</animations>
+				</enemy>
+			</enemies>
+			<Items>
+				<item x="548" y="350" w="32" h="32" texture="Assets/Textures/goldCoin.png">
+					<animations>
+						<idle loop="true" speed="0.05" texture="Assets/Textures/goldCoin.png">
+							<frame x="0" y="0" w="32" h="32" />
+							<frame x="32" y="0" w="32" h="32" />
+							<frame x="64" y="0" w="32" h="32" />
+							<frame x="128" y="0" w="32" h="32" />
+						</idle>
+						<CoinCount loop="false" speed="0" texture="Assets/Textures/goldCoin.png">
+							<frame x="0" y="0" w="32" h="32" />
+							</CoinCount>
+						</animations>  
+				</item>
+			</Items>
+		</entities>
+	</scene>
+</config>
