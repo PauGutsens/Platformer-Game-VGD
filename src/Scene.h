@@ -51,7 +51,7 @@ public:
 	// Handles multiple Gui Event methods
 	bool OnGuiMouseClickEvent(GuiControl* control);
 	bool pendingToLoad;
-	bool InitGame();  // Nueva función para inicializar el juego
+	bool InitGame();  // Nueva funciÃ³n para inicializar el juego
 
 
 
@@ -84,4 +84,6 @@ private:
 	GuiControlButton* startButton;*/
 	TitleScreen* titleScreen;
 	bool gameStarted;
+	Timer timer;  // Instancia del temporizador
+
 };
