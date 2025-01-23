@@ -240,6 +240,10 @@ void Player::OnCollision(PhysBody* physA, PhysBody* physB) {
 			LOG("Player died - Level will restart");
 		}
 		break;
+	case ColliderType::CHECKPOINT:
+		LOG("Collision CHECKPOINT");
+		Engine::GetInstance().scene.get()->SaveState();
+		break;
 	case ColliderType::DEATH:
 		
 		isDead = true;
