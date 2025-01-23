@@ -479,6 +479,7 @@ bool Scene::InitGame()
 		return false;
 	}
 
+
 	// 4. Crear e inicializar enemigos
 
 		// ... (código anterior permanece igual)
@@ -667,6 +668,7 @@ bool Scene::InitGame()
 				(int)itemPositions[i].getX(),
 				(int)itemPositions[i].getY());
 		}
+		
 
 
 	mouseTileTex = Engine::GetInstance().textures.get()->Load("Assets/Maps/MapMetadata.png");

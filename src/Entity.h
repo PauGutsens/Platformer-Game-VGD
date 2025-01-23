@@ -8,6 +8,7 @@ enum class EntityType
 	PLAYER,
 	ITEM,
 	UNKNOWN,
+	POWERUP,
 	ENEMY
 };
 

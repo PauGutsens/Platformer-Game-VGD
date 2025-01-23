@@ -116,6 +116,9 @@
 						</animations>  
 				</item>
 			</Items>
+			<PowerUp>
+				<powerup x="600" y="600" w="32" h="32" texture="Assets/Textures/PowerUp.png" />
+			</PowerUp>
 		</entities>
 	</scene>
 </config>

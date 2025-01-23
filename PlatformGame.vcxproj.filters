@@ -96,6 +96,9 @@
     <ClCompile Include="src\TitleScreen.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
+    <ClCompile Include="src\PowerUp.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Audio.h">
@@ -171,6 +174,9 @@
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="src\TitleScreen.h">
+      <Filter>Source Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PowerUp.h">
       <Filter>Source Files\Game</Filter>
     </ClInclude>
   </ItemGroup>
