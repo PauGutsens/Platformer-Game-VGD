@@ -63,6 +63,8 @@ bool Player::Start() {
 	pickCoinFxId = Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/coin-recieved-230517.ogg");
 	IsLookingRight = true;
 	IsDashing = false;
+	powerUp = false;
+	jumps = 0;
 	return true;
 }
 
@@ -77,7 +79,7 @@ bool Player::Update(float dt)
 	}
 
 	IsWalking = false; // Inicializamos el estado como false por defecto
-	
+
 
 
 	// Move right
@@ -96,13 +98,13 @@ bool Player::Update(float dt)
 			IsLookingRight = false;
 		}
 	}
-	
+
 	/*LOG("IsLookingRight: %s", IsLookingRight ? "true" : "false");*/
 
 	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_LSHIFT) == KEY_REPEAT) {
 		IsDashing = true;
 		IsWalking = true;
-		
+
 		if (IsLookingRight == true) {
 			velocity.x = 0.4f * 16; // Dash speed to the right
 		}
@@ -162,12 +164,24 @@ bool Player::Update(float dt)
 	}
 
 	//Jump
-	if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN && !isJumping) {
-		pbody->body->ApplyLinearImpulseToCenter(b2Vec2(0, -jumpForce), true);
-		Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/jump.ogg");
+	if (!powerUp) {
+		if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN && !isJumping) {
+			pbody->body->ApplyLinearImpulseToCenter(b2Vec2(0, -jumpForce), true);
+			Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/jump.ogg");
 
-		isJumping = true;
+			isJumping = true;
+		}
 	}
+	if (powerUp) {
+		if (Engine::GetInstance().input.get()->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN && jumps > 0) {
+			pbody->body->ApplyLinearImpulseToCenter(b2Vec2(0, -jumpForce), true);
+			Engine::GetInstance().audio.get()->LoadFx("Assets/Audio/Fx/jump.ogg");
+
+			jumps--;
+			isJumping = true;
+		}
+	}
+
 
 	// If the player is jumping, we don't want to apply gravity, we use the current velocity produced by the jump
 	if (isJumping) {
@@ -219,6 +233,12 @@ void Player::OnCollision(PhysBody* physA, PhysBody* physB) {
 	case ColliderType::PLATFORM:
 		LOG("Collision PLATFORM");
 		isJumping = false;
+		jumps = 2;
+		break;
+	case ColliderType::POWERUP:
+		powerUp = true;
+		LOG("Collision POWERUP");
+		Engine::GetInstance().physics.get()->DeletePhysBody(physB); // Deletes the body of the item from the physics world
 		break;
 	case ColliderType::ITEM:
 		LOG("Collision ITEM");

@@ -44,6 +44,8 @@ public:
 	SDL_Texture* texture = NULL;
 	int texW, texH;
 	bool IsWalking;
+	bool powerUp;
+	int jumps;
 	//Audio fx
 	int pickCoinFxId;
 	bool IsDashing;
