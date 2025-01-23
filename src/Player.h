@@ -60,6 +60,7 @@ public:
 	bool shouldReloadState = false;
 	bool isDead = false;
 	int coinCount = 0;
+	int lives = 1;
 
 
 };
