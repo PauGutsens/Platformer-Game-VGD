@@ -18,7 +18,7 @@
 Scene::Scene() : Module()
 {
 	name = "scene";
-	titleScreen = new TitleScreen();  // Inicializar aquÌ
+	titleScreen = new TitleScreen();  // Inicializar aqu√≠
 	gameStarted = false;
 }
 
@@ -36,7 +36,7 @@ bool Scene::Awake()
 
 	if (!gameStarted && titleScreen != nullptr)
 	{
-		titleScreen->Awake();  // Si TitleScreen tiene funciÛn Awake
+		titleScreen->Awake();  // Si TitleScreen tiene funci√≥n Awake
 	}
 
 	// Initialize the game state
@@ -73,7 +73,7 @@ bool Scene::Awake()
 		//{
 		//	Item* item = (Item*)Engine::GetInstance().entityManager->CreateEntity(EntityType::ITEM);
 		//	item->SetParameters(itemNode);
-		//	itemList.push_back(item);  // AÒadir a nuestra lista
+		//	itemList.push_back(item);  // A√±adir a nuestra lista
 		//}
 
 		// Create enemies
@@ -107,7 +107,7 @@ bool Scene::Start()
 		return titleScreen->Start();
 	}
 
-	// Todo el resto de la inicializaciÛn del juego se mover· a una nueva funciÛn
+	// Todo el resto de la inicializaci√≥n del juego se mover√° a una nueva funci√≥n
 	return InitGame();
 }
 // Called each loop iteration
@@ -127,7 +127,7 @@ bool Scene::Update(float dt)
 			titleScreen->CleanUp();
 			delete titleScreen;
 			titleScreen = nullptr;
-			return InitGame();  // Inicializa el juego cuando se presiona el botÛn
+			return InitGame();  // Inicializa el juego cuando se presiona el bot√≥n
 		}
 		return true;
 	}
@@ -191,7 +191,7 @@ bool Scene::Update(float dt)
 		LoadState();  // Recargar el nivel
 	}
 
-	//font = TTF_OpenFont("Assets/Fonts/arial/arial.ttf", 24); // Carga la fuente con tamaÒo 24
+	//font = TTF_OpenFont("Assets/Fonts/arial/arial.ttf", 24); // Carga la fuente con tama√±o 24
 
 	//if (font == nullptr) {
 	//	SDL_Log("Error loading font: %s", TTF_GetError());
@@ -199,21 +199,22 @@ bool Scene::Update(float dt)
 	//}
 	//SDL_Color color = { 255, 255, 255, 255 }; // Color blanco para el texto
 	//
-	//// PosiciÛn en pantalla para el contador y la moneda
-	//int coinX = 10; // PosiciÛn X para el contador
-	//int coinY = 10; // PosiciÛn Y para el contador
+	//// Posici√≥n en pantalla para el contador y la moneda
+	//int coinX = 10; // Posici√≥n X para el contador
+	//int coinY = 10; // Posici√≥n Y para el contador
 	//int coinTextOffset = 40; // Espaciado entre la textura y el texto
 
 	// Dibujar la textura de la moneda
 	//Engine::GetInstance().render.get()->DrawTexture(coinTexture, coinX, coinY, nullptr);
 	//Engine::GetInstance().render.get()->DrawText("X\t ")
-	// Dibujar el texto con el n˙mero de monedas
+	// Dibujar el texto con el n√∫mero de monedas
 	
 	
 	// Dibujar el contador de monedas en la esquina superior derecha
 	std::string coinText = "Coins: " + std::to_string(player->coinCount);
 	Engine::GetInstance().render.get()->DrawText(coinText.c_str(), 40, 10, 155, 50);
-
+	std::string lives = "Lives: " + std::to_string(player->lives);
+	Engine::GetInstance().render.get()->DrawText(lives.c_str(), 40, 50, 103, 33);
 	return true;
 }
 
@@ -237,7 +238,7 @@ bool Scene::PostUpdate()
 bool Scene::CleanUp() {
 	LOG("Cleaning up Scene...");
 
-	// Limpiar TitleScreen si a˙n no se ha iniciado el juego
+	// Limpiar TitleScreen si a√∫n no se ha iniciado el juego
 	if (!gameStarted && titleScreen != nullptr) {
 		LOG("Cleaning up TitleScreen...");
 		titleScreen->CleanUp();
@@ -301,7 +302,7 @@ void Scene::LoadState() {
 
 	pugi::xml_node sceneNode = loadFile.child("config").child("scene");
 
-	// Cargar posiciÛn del jugador
+	// Cargar posici√≥n del jugador
 	pugi::xml_node playerNode = sceneNode.child("entities").child("player");
 	if (playerNode) {
 		Vector2D playerPos = Vector2D(
@@ -347,7 +348,7 @@ void Scene::LoadState() {
 	//		continue;
 	//	}
 
-	//	// Configurar posiciÛn del enemigo
+	//	// Configurar posici√≥n del enemigo
 	//	if (enemyNode.attribute("x") && enemyNode.attribute("y")) {
 	//		enemy->SetPosition(Vector2D(
 	//			enemyNode.attribute("x").as_int(),
@@ -397,7 +398,7 @@ void Scene::SaveState() {
 
 	pugi::xml_node sceneNode = saveFile.child("config").child("scene");
 
-	// Guardar posiciÛn del jugador
+	// Guardar posici√≥n del jugador
 	sceneNode.child("entities").child("player").attribute("x").set_value(player->GetPosition().getX());
 	sceneNode.child("entities").child("player").attribute("y").set_value(player->GetPosition().getY());
 
@@ -444,7 +445,7 @@ bool Scene::OnGuiMouseClickEvent(GuiControl* control)
 }
 bool Scene::InitGame()
 {
-	// 1. Asegurarnos que el sistema de fÌsica est· activo
+	// 1. Asegurarnos que el sistema de f√≠sica est√° activo
 	/*if (!Engine::GetInstance().physics->IsEnabled()) {
 		if (!Engine::GetInstance().physics->Enable()) {
 			LOG("Failed to enable physics system!");
@@ -452,7 +453,7 @@ bool Scene::InitGame()
 		}
 	}*/
 
-	// 2. Cargar el mapa primero ya que otros elementos pueden depender de Èl
+	// 2. Cargar el mapa primero ya que otros elementos pueden depender de √©l
 	if (!Engine::GetInstance().map->Load(
 		configParameters.child("map").attribute("path").as_string(),
 		configParameters.child("map").attribute("name").as_string()))
@@ -475,9 +476,9 @@ bool Scene::InitGame()
 
 	// 4. Crear e inicializar enemigos
 
-		// ... (cÛdigo anterior permanece igual)
+		// ... (c√≥digo anterior permanece igual)
 
-		// Crear e inicializar enemigos con un enfoque m·s din·mico
+		// Crear e inicializar enemigos con un enfoque m√°s din√°mico
 		std::vector<Vector2D> enemyPositions = {
 			{400, 655}, 
 			{600, 350}, 
@@ -502,7 +503,7 @@ bool Scene::InitGame()
 		};
 
 		for (size_t i = 0; i < enemyPositions.size(); ++i) {
-			// Alternar entre enemigos con y sin gravedad de manera m·s precisa
+			// Alternar entre enemigos con y sin gravedad de manera m√°s precisa
 			bool hasGravity = (i % 2 == 0);
 
 			Enemy* enemy = (Enemy*)Engine::GetInstance().entityManager->CreateEntity(EntityType::ENEMY);
@@ -511,7 +512,7 @@ bool Scene::InitGame()
 				continue;
 			}
 
-			// Configurar nodo de par·metros para el enemigo
+			// Configurar nodo de par√°metros para el enemigo
 			pugi::xml_document doc;
 			pugi::xml_node enemyNode = doc.append_child("enemy");
 			enemyNode.append_attribute("x") = enemyPositions[i].getX();
