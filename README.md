@@ -27,3 +27,16 @@ This is an original platform genre game, where the objective is to go at the end
 - Enemy Entity with animations
 - Music and Fx:
   - Game Music, Death Fx,, Checkpoint Fx 
+
+
+## Release 0.7(Alpha)
+### Features
+-Improved player animations
+-Implemented new Power Up: Superboots
+	-When collected allows player to do a double jump by pressing space while on mid air.
+-Fixed Checkpoints (Direction Signs)
+-Added more enemies
+-Added a brand-new Boss enemy
+-Added Coins that can be collected
+-Added a Main Menu Screen
+-Added a Settings Screen with multiple option to toggle
