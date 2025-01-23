@@ -215,6 +215,11 @@ bool Scene::Update(float dt)
 	Engine::GetInstance().render.get()->DrawText(coinText.c_str(), 40, 10, 155, 50);
 	std::string lives = "Lives: " + std::to_string(player->lives);
 	Engine::GetInstance().render.get()->DrawText(lives.c_str(), 40, 50, 103, 33);
+	int seconds = timer.ReadSec();
+	int minutes = seconds / 60;
+	int remainingSeconds = seconds % 60;
+	std::string timeText = "Time: " + std::to_string(minutes) + ":" + (remainingSeconds < 10 ? "0" : "") + std::to_string(remainingSeconds);
+	Engine::GetInstance().render.get()->DrawText(timeText.c_str(), 110, 10, 103, 33);
 	return true;
 }
 
