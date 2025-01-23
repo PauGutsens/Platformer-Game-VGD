@@ -295,4 +295,14 @@ bool Engine::LoadConfig()
     return ret;
 }
 
+void Engine::ChangeScene(Module* newScene) {
+    if (currentScene != nullptr) {
+        currentScene->CleanUp();
+        delete currentScene;
+    }
+
+    currentScene = newScene;
+
+    currentScene->Start();
+}
 
