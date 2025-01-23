@@ -42,6 +42,14 @@ public:
 	// Called before quitting
 	bool CleanUp();
 
+	void ChangeScene(Module* newScene);  
+	Module* currentScene;
+
+	void SetScene(Module* newScene) {
+		// Cambiar la escena actual
+		currentScene = newScene;
+	}
+
 	float GetDt() const {
 		return dt;
 	}
